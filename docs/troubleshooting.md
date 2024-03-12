@@ -22,6 +22,22 @@ If the pipeline is interrupted, it can be resumed without having to start from s
 Add the `-resume` flag to your command, and Nextflow will start the workflow from the last successfully executed process, 
 retrieving all previous results from the cache.
 
+### Specifying the full path for input data
+
+When inputting data, ensuring the correct file path is essential for successful processing. 
+Incorrect or incomplete paths will lead to errors.  
+
+!!! failure "File path"
+    `Not a valid path value`
+
+To avoid this issue, it is recommended to use the absolute path to your input data. 
+An absolute path specifies the exact location of a file in the file system, starting from the root directory.  
+
+For instance, if your file is located in the current working directory, 
+you can construct its absolute path by prefixing the file name with `$(pwd)/`. 
+This command outputs the full path of the current directory, which, 
+when combined with your file or directory name, provides the complete path required.  
+Example: `$(pwd)/your_file_name`.  
 
 
 ### The number of available CPUs
