@@ -56,15 +56,30 @@ Solution - specify a version number of the pipeline.
 To run the latest version, add `-r main` to your command.  
 Alternatively, you may specify the exact version (or tag) you wish, e.g. `-r v.0.0.2`.  
 
-###
+### Lack of node ages in the phylogenetic tree for target taxon
+
+Currently, OpenTree may not contain age estimates for all nodes within the synthetic tree, 
+which can impede the automatic retrieval of a phylogenetic tree for your taxon of interest.  
+
+To address this limitation, we outline several strategies below.  
+
+!!! failure "Missing age estimate for subtree root"
+    `ERROR: no age estimate for subtree root could be found in datastore. Please  re-run query with a max root age using argument 'max_age'.`
+
+When the database lacks age data for a clade, 
+you can manually set a maximum age for the clade using the `--maxage` parameter. 
+It's advisable to use a credible value, such as one derived from scholarly articles 
+(e.g., through a Google Scholar search for published age estimates).  
 
 
+!!! failure "Inadequate data for date estimation"
+    `ERROR: only 2 or fewer age calibrations found for this tree. We have insufficient data to estimate dates.`
 
-process `get_ott_tree`
-{
-      "message": "ERROR: no age estimate for subtree root could be found in datastore. Please  re-run query with a max root age using argument 'max_age'\n"
-  }
-
+In situations with insufficient data for accurate date estimation, 
+acquiring a custom tree may be necessary. 
+To derive node age estimates, you can use `Chronosynth` 
+and apply `Bladj` to smooth out the node ages.
+For instructions, visit [McTavishLab's GitHub repository](https://github.com/McTavishLab/GBIF-Biodiverse-OpenTree/tree/main/dates).  
 
 
 ## Installation problems
