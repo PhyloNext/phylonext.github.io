@@ -13,7 +13,7 @@ description: >-
 
 Test run the pipeline using test data and Docker engine:
 ``` bash
-nextflow run vmikk/phylonext -r main -profile test,docker
+nextflow run vmikk/PhyloNext -r main -profile test,docker
 ```
 
 ## Running the pipeline
@@ -21,7 +21,7 @@ nextflow run vmikk/phylonext -r main -profile test,docker
 The typical command for running the pipeline is as follows:  
 
 ``` bash
-nextflow run vmikk/phylonext -r main \
+nextflow run vmikk/PhyloNext -r main \
   --input "/mnt/GBIF/Parquet/2022-01-01/occurrence.parquet/" \
   --classis "Mammalia" --family  "Felidae,Canidae" \
   --country "DE,PL,CZ"  \
@@ -65,7 +65,7 @@ Without `-resume`, Nextflow will start the workflow from scratch and overwrite a
 ## Built-in data
 
 PhyloNext pipeline contains several files for removing spatial outliers or data subsetting.  
-By default, built-in data is stored in the folder `${HOME}/.nextflow/assets/vmikk/phylonext/pipeline_data/`.
+By default, built-in data is stored in the folder `${HOME}/.nextflow/assets/vmikk/PhyloNext/pipeline_data/`.
 
 | File                                  | Description                                             | Citation                                                                                      |
 | ------------------------------------- | ------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
@@ -79,7 +79,7 @@ By default, built-in data is stored in the folder `${HOME}/.nextflow/assets/vmik
 
 To use the built-in data, provide a full path to the data.  
 E.g., to remove records from urban areas, add the following parameter to your command:  
-`--rmurban ${HOME}/.nextflow/assets/vmikk/phylonext/pipeline_data/CC_Urban.RData`.  
+`--rmurban ${HOME}/.nextflow/assets/vmikk/PhyloNext/pipeline_data/CC_Urban.RData`.  
 Alternatively, you may use custom files prepared in the same format.
 
 To remove common spatial errors from the data, PhyloNext uses databases 
@@ -169,7 +169,7 @@ The total number of CPUs allowed to use by PhyloNext can be adjusted with `-qs` 
 
 To show a help message, run:
 ``` bash
-nextflow run vmikk/phylonext -r main --help
+nextflow run vmikk/PhyloNext -r main --help
 ```
 
 ## Configuration and profiles
@@ -181,7 +181,7 @@ such as parameter files, configuration files, and profiles.
 
 As the number of parameters can be quite large, it is possible to pass the pipeline parameters via YAML or JSON file, e.g.:
 ``` bash
-nextflow run vmikk/phylonext -r main -resume -params-file Mammals.yaml
+nextflow run vmikk/PhyloNext -r main -resume -params-file Mammals.yaml
 ```
 
 The YAML file could contain the following:
@@ -218,7 +218,7 @@ process {
 
 Then, use the `-c` option to choose the created configuration file while running the pipeline. E.g.,  
 ``` bash
-nextflow run vmikk/phylonext ... -c my.config
+nextflow run vmikk/PhyloNext ... -c my.config
 ```
 
 !!! info "Configs"
@@ -264,13 +264,13 @@ Profiles are loaded in sequential order so that the later profile will overwrite
 To make sure that you're running the latest version of the pipeline, 
 you may download the latest version and update the pipeline using:  
 ``` bash
-nextflow pull vmikk/phylonext
+nextflow pull vmikk/PhyloNext
 ```
 By default, the cached version of the pipeline is stored in the `~/.nextflow/assets/vmikk/PhyloNext` directory.
 
 Run the latest development version of the pipeline (from the `main` branch of the code repository):
 ``` bash
-nextflow run vmikk/phylonext -r main ...
+nextflow run vmikk/PhyloNext -r main ...
 ```
 
 When executing PhyloNext on your data, it is a good idea to specify a version number for the pipeline. 
@@ -282,18 +282,18 @@ This version number will be recorded in pipeline reports so you can later go bac
 
 Run the tagged version (e.g., v.1.3.0) of the pipeline:
 ``` bash
-nextflow run vmikk/phylonext -r v.1.3.0 ...
+nextflow run vmikk/PhyloNext -r v.1.3.0 ...
 ```
 
 Print the pipeline and system runtime information:
 ``` bash
 nextflow info
-nextflow info vmikk/phylonext
+nextflow info vmikk/PhyloNext
 ```
 
 Delete the local copy of the pipeline:
 ``` bash
-nextflow drop vmikk/phylonext
+nextflow drop vmikk/PhyloNext
 ```
 
 ## Docker and Singularity containers

@@ -93,7 +93,7 @@ Spatial filters.
 
 ^3^:
     PhyloNext ships [WGSRPD](https://www.tdwg.org/standards/wgsrpd/) shapefile as a built-in data.
-    To use it, specify a full path to the data (e.g., `$(realpath "${HOME}/.nextflow/assets/vmikk/phylonext/pipeline_data/WGSRPD.RData")`)
+    To use it, specify a full path to the data (e.g., `$(realpath "${HOME}/.nextflow/assets/vmikk/PhyloNext/pipeline_data/WGSRPD.RData")`)
 
 ^4^:
     Multiple comma-separated values allowed.  
@@ -264,11 +264,11 @@ in [`CoordinateCleaner`](https://ropensci.github.io/CoordinateCleaner/) R packag
  PhyloNext provides files for removal of common spatial errors, 
  the data are built-in in the `pipeline_data` direcory and can be selected in the following way:
 ``` bash
---terrestrial `$(realpath "${HOME}/.nextflow/assets/vmikk/phylonext/pipeline_data/Land_Buffered_025_dgr.RData")`
---rmcountrycentroids `$(realpath "${HOME}/.nextflow/assets/vmikk/phylonext/pipeline_data/CC_CountryCentroids_buf_1000m.RData")`
---rmcountrycapitals `$(realpath "${HOME}/.nextflow/assets/vmikk/phylonext/pipeline_data/CC_Capitals_buf_10000m.RData")`
---rminstitutions `$(realpath "${HOME}/.nextflow/assets/vmikk/phylonext/pipeline_data/CC_Institutions_buf_100m.RData")`
---rmurban `$(realpath "${HOME}/.nextflow/assets/vmikk/phylonext/pipeline_data/CC_Urban.RData")`
+--terrestrial `$(realpath "${HOME}/.nextflow/assets/vmikk/PhyloNext/pipeline_data/Land_Buffered_025_dgr.RData")`
+--rmcountrycentroids `$(realpath "${HOME}/.nextflow/assets/vmikk/PhyloNext/pipeline_data/CC_CountryCentroids_buf_1000m.RData")`
+--rmcountrycapitals `$(realpath "${HOME}/.nextflow/assets/vmikk/PhyloNext/pipeline_data/CC_Capitals_buf_10000m.RData")`
+--rminstitutions `$(realpath "${HOME}/.nextflow/assets/vmikk/PhyloNext/pipeline_data/CC_Institutions_buf_100m.RData")`
+--rmurban `$(realpath "${HOME}/.nextflow/assets/vmikk/PhyloNext/pipeline_data/CC_Urban.RData")`
 ```
 Alternatively, users can provide own files with custom polygons.
 
@@ -330,7 +330,7 @@ The file comprises seven biogeographical kingdoms:
 
 To activate spatially-constrained randomizations using these biogeographic regions, add the following argument to your command:  
 ``` bash
---randconstrain `$(realpath "${HOME}/.nextflow/assets/vmikk/phylonext/pipeline_data/ZoogeographicRegions.gpkg")`
+--randconstrain `$(realpath "${HOME}/.nextflow/assets/vmikk/PhyloNext/pipeline_data/ZoogeographicRegions.gpkg")`
 ```
 
 

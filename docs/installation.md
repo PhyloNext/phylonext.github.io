@@ -89,5 +89,5 @@ For more details see [the Docker Desktop documentation](https://docs.docker.com/
 ## 3. Download the pipeline and test it on a minimal dataset with a single command
 
 ``` bash
-nextflow run vmikk/phylonext -r main -profile test,docker
+nextflow run vmikk/PhyloNext -r main -profile test,docker
 ```

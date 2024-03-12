@@ -49,12 +49,23 @@ See the `Configuration` section in the [usage documentation](https://phylonext.g
 
 !!! failure "Pipeline revision version"
     ```
-    Project \`vmikk/phylonext\` is currently stickied on revision: main -- you need to explicitly specify a revision with the option \`-r\` in order to use it
+    Project \`vmikk/PhyloNext\` is currently stickied on revision: main -- you need to explicitly specify a revision with the option \`-r\` in order to use it
     ```
 
 Solution - specify a version number of the pipeline.  
 To run the latest version, add `-r main` to your command.  
 Alternatively, you may specify the exact version (or tag) you wish, e.g. `-r v.0.0.2`.  
+
+###
+
+
+
+process `get_ott_tree`
+{
+      "message": "ERROR: no age estimate for subtree root could be found in datastore. Please  re-run query with a max root age using argument 'max_age'\n"
+  }
+
+
 
 ## Installation problems
 
