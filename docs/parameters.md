@@ -78,6 +78,7 @@ Define which taxa should be analyzed.
     and are used to filter and retrieve specific species data from GBIF.
     Example of the file:  
     ```
+    specieskey
     5219243
     7964291
     2435035
@@ -85,7 +86,7 @@ Define which taxa should be analyzed.
     5219173
     ```
     , where e.g. the first species key in the list (5219243) 
-    corresponds to Vulpes vulpes (https://www.gbif.org/species/5219243)
+    corresponds to *Vulpes vulpes* (https://www.gbif.org/species/5219243)
 
 
 ## Spatial scope
