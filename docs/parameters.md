@@ -58,7 +58,7 @@ Define which taxa should be analyzed.
 | `--order`        | Order to analyze ^1^                                                                             | `string`  | "Carnivora"        |         |
 | `--family`       | Family to analyze ^1^                                                                            | `string`  | "Felidae,Canidae"  |         |
 | `--genus`        | Genus to analyze ^1^                                                                             | `string`  | "Felis,Canis,Lynx" |         |
-| `--specieskeys`  | Custom list of GBIF specieskeys (file with a single column)                                      | `file`    | "Carnivora"        |         |
+| `--specieskeys`  | Custom list of GBIF specieskeys (text file with a single column) ^3^                             | `file`    | "SpeciesKeys.txt"  |         |
 | `--noextinct`    | File with extinct species specieskeys for their removal (file with a single column, with header) | `file`    | "Carnivora"        |         |
 | `--excludehuman` | Exclude genus "Homo" from occurrence data                                                        | `boolean` | True               | True    |
 
@@ -68,6 +68,25 @@ Define which taxa should be analyzed.
 ^2^:
     Unfortunately, `class` is a reserved keyword in Nextflow. 
     Therefore, Latin `classis` is used as a parameter name.
+
+^3^:
+    The `--specieskeys` argument enables users to specify a custom list of GBIF species keys.  
+    This should be provided as a text file containing a single column of species keys, 
+    each corresponding to a specific species as defined in the GBIF taxonomic backbone 
+    (https://www.gbif.org/species/search). 
+    These species keys can belong to various taxa, including non-monophyletic clades, 
+    and are used to filter and retrieve specific species data from GBIF.
+    Example of the file:  
+    ```
+    5219243
+    7964291
+    2435035
+    2434552
+    5219173
+    ```
+    , where e.g. the first species key in the list (5219243) 
+    corresponds to Vulpes vulpes (https://www.gbif.org/species/5219243)
+
 
 ## Spatial scope
 
