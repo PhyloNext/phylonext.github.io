@@ -24,6 +24,25 @@ Alternatively, it is possible to open the GeoPackage file using R or Python.
 Below, there are two basic examples on how to load the file. 
 Depending on the specific requirements of the analysis, 
 you may need to perform additional steps such as spatial transformations, querying, or more complex plotting.
+
+### In R using the `sf` package
+
+The [`sf` package](https://r-spatial.github.io/sf/) in R is a powerful tool for handling spatial data. 
+It provides straightforward mechanisms for reading, writing, and manipulating spatial data in various formats including GeoPackage.
+
+``` r
+# Install sf package if it's not already installed
+if (!requireNamespace("sf", quietly = TRUE)){ install.packages("sf") }
+
+# Load the sf package
+library(sf)
+
+# Load the GeoPackage file
+div <- st_read("03.Plots/Diversity_estimates.gpkg")
+
+# Plot the data
+plot(div)
+```
 ## Results exploration with Biodiverse program 
 
 `Biodiverse` is a program for the spatial analysis of diversity which performs all the hard work for PhyloNext. 
