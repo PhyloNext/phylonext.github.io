@@ -20,6 +20,10 @@ which could be easily exported and visualized in your favorite GIS software.
 For example, you may use a free and open source application [`QGIS`](https://qgis.org/en/site/) to open a GeoPackage file.
 ![GeoPackage and OSM in QGIS](assets/GeoPackage_QGIS.webp){ align=left }
 
+Alternatively, it is possible to open the GeoPackage file using R or Python. 
+Below, there are two basic examples on how to load the file. 
+Depending on the specific requirements of the analysis, 
+you may need to perform additional steps such as spatial transformations, querying, or more complex plotting.
 ## Results exploration with Biodiverse program 
 
 `Biodiverse` is a program for the spatial analysis of diversity which performs all the hard work for PhyloNext. 
