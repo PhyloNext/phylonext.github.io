@@ -43,6 +43,32 @@ div <- st_read("03.Plots/Diversity_estimates.gpkg")
 # Plot the data
 plot(div)
 ```
+
+### In Python using the `Fiona` and `geopandas` packages
+
+[`Fiona`](https://fiona.readthedocs.io/en/stable/) is used for reading and writing spatial data files, 
+and [`GeoPandas`](https://geopandas.org/en/stable/) extends the datatypes used by `pandas` to allow spatial operations on geometric types.
+
+``` bash
+# Install required packages if not already installed
+pip install fiona geopandas matplotlib
+```
+
+``` python
+# Import packages
+import fiona
+import geopandas as gpd
+import matplotlib.pyplot as plt
+
+# Load a GeoPackage file
+div = gpd.read_file("03.Plots/Diversity_estimates.gpkg")
+
+# Plot the data
+div.plot()
+plt.show()
+```
+
+
 ## Results exploration with Biodiverse program 
 
 `Biodiverse` is a program for the spatial analysis of diversity which performs all the hard work for PhyloNext. 
