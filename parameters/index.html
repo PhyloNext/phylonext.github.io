@@ -1,0 +1,2082 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A complete list and description of PhyloNext parameters.">
+      
+      
+        <meta name="author" content="Vladimir Mikryukov, Kessy Abarenkov">
+      
+      
+        <link rel="canonical" href="https://phylonext.github.io/parameters/">
+      
+      
+        <link rel="prev" href="../outputs/">
+      
+      
+        <link rel="next" href="../biodiverse/">
+      
+      
+      <link rel="icon" href="../assets/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.27">
+    
+    
+      
+        <title>Pipeline parameters - PhyloNext</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.6543a935.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,700,700i%7CUbuntu+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Ubuntu";--md-code-font:"Ubuntu Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#pipeline-parameters" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="PhyloNext" class="md-header__button md-logo" aria-label="PhyloNext" data-md-component="logo">
+      
+  <img src="../assets/PhyloNext_logo.webp" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            PhyloNext
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Pipeline parameters
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="brown" data-md-color-accent="red"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/vmikk/PhyloNext" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="PhyloNext" class="md-nav__button md-logo" aria-label="PhyloNext" data-md-component="logo">
+      
+  <img src="../assets/PhyloNext_logo.webp" alt="logo">
+
+    </a>
+    PhyloNext
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/vmikk/PhyloNext" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Installation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../usage/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Usage instructions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../inputdata/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Input data
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../outputs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Output overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Pipeline parameters
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Pipeline parameters
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#inputoutput-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      Input/output options
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#taxonomic-scope" class="md-nav__link">
+    <span class="md-ellipsis">
+      Taxonomic scope
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#spatial-scope" class="md-nav__link">
+    <span class="md-ellipsis">
+      Spatial scope
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#spatial-outliers-removal" class="md-nav__link">
+    <span class="md-ellipsis">
+      Spatial outliers removal
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#occurrence-filtering-and-binning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Occurrence filtering and binning
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#removal-of-common-spatial-errors" class="md-nav__link">
+    <span class="md-ellipsis">
+      Removal of common spatial errors
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#diversity-estimation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diversity estimation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#visualization-interactive" class="md-nav__link">
+    <span class="md-ellipsis">
+      Visualization - interactive
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#visualization-static" class="md-nav__link">
+    <span class="md-ellipsis">
+      Visualization - static
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phylogenetic-tree-related-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phylogenetic tree-related parameters
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generic-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      Generic options
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nextflow-specific-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Nextflow-specific parameters
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../biodiverse/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Diversity indices
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../troubleshooting/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Troubleshooting
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../webgui/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Web GUI
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../post/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Post processing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../usecases/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Use cases
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../acknowledgements/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Acknowledgments
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../citations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Citations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#inputoutput-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      Input/output options
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#taxonomic-scope" class="md-nav__link">
+    <span class="md-ellipsis">
+      Taxonomic scope
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#spatial-scope" class="md-nav__link">
+    <span class="md-ellipsis">
+      Spatial scope
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#spatial-outliers-removal" class="md-nav__link">
+    <span class="md-ellipsis">
+      Spatial outliers removal
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#occurrence-filtering-and-binning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Occurrence filtering and binning
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#removal-of-common-spatial-errors" class="md-nav__link">
+    <span class="md-ellipsis">
+      Removal of common spatial errors
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#diversity-estimation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diversity estimation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#visualization-interactive" class="md-nav__link">
+    <span class="md-ellipsis">
+      Visualization - interactive
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#visualization-static" class="md-nav__link">
+    <span class="md-ellipsis">
+      Visualization - static
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phylogenetic-tree-related-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phylogenetic tree-related parameters
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generic-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      Generic options
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nextflow-specific-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Nextflow-specific parameters
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="pipeline-parameters">Pipeline parameters<a class="headerlink" href="#pipeline-parameters" title="Permanent link">&para;</a></h1>
+<p>PhyloNext includes numerous configurable parameters.<br />
+For convenience, they are grouped into several categories: </p>
+<ul>
+<li>Input/output options</li>
+<li>Data subsetting:<ul>
+<li>Taxonomic scope</li>
+<li>Spatial scope</li>
+</ul>
+</li>
+<li>Spatial outliers removal</li>
+<li>Occurrence filtering and binning</li>
+<li>Diversity estimation</li>
+<li>Visualization<ul>
+<li>Interactive (<a href="https://leafletjs.com/">Leaflet</a>-based)</li>
+<li>Static (maps in pdf format)</li>
+</ul>
+</li>
+<li>Phylogenetic tree-related parameters</li>
+<li>Generic options</li>
+<li>Nextflow-specific parameters</li>
+</ul>
+<h2 id="inputoutput-options">Input/output options<a class="headerlink" href="#inputoutput-options" title="Permanent link">&para;</a></h2>
+<p>Define where the pipeline should find input data and save output data.</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Type</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--input</code></td>
+<td>Path to the directory with parquet files (Parquet format) <sup>1</sup></td>
+<td><code>directory</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>--outdir</code></td>
+<td>The output directory where the results will be saved</td>
+<td><code>directory</code></td>
+<td>./results</td>
+</tr>
+<tr>
+<td><code>--phytree</code></td>
+<td>Custom phylogenetic tree in Newick format (optional) <sup>2</sup></td>
+<td><code>file</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><sup>1</sup>:
+    GBIF occurrence dump in the Parquet format. 
+    Could be stored locally or in the cloud (S3 or Azure Blob storage).</p>
+<p><sup>2</sup>:
+    Users have the option to provide their own custom phylogenetic tree. 
+    If this option is chosen, the tips of the phylogenetic tree should be labeled 
+    either with <em>Latin binomials</em> (for example, "Homo_sapiens"), 
+    or with <em>Open Tree IDs</em> (for example, "ott359899"). 
+    Be sure to adjust the <a href="#Phylogenetic-tree-related-parameters"><code>--phylabels</code></a> parameter accordingly.<br />
+    Additionally, a set of phylogenetic trees, which come with descriptions and 
+    are pre-packaged with the pipeline, are available at this link:<br />
+<a href="https://github.com/vmikk/PhyloNext/tree/main/test_data/phy_trees">https://github.com/vmikk/PhyloNext/tree/main/test_data/phy_trees</a>  </p>
+<h2 id="taxonomic-scope">Taxonomic scope<a class="headerlink" href="#taxonomic-scope" title="Permanent link">&para;</a></h2>
+<p>Define which taxa should be analyzed.</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Type</th>
+<th>Example</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--phylum</code></td>
+<td>Phylum to analyze <sup>1</sup></td>
+<td><code>string</code></td>
+<td>"Chordata"</td>
+<td></td>
+</tr>
+<tr>
+<td><code>--classis</code></td>
+<td>Class to analyze <sup>1</sup> <sup>2</sup></td>
+<td><code>string</code></td>
+<td>"Mammalia"</td>
+<td></td>
+</tr>
+<tr>
+<td><code>--order</code></td>
+<td>Order to analyze <sup>1</sup></td>
+<td><code>string</code></td>
+<td>"Carnivora"</td>
+<td></td>
+</tr>
+<tr>
+<td><code>--family</code></td>
+<td>Family to analyze <sup>1</sup></td>
+<td><code>string</code></td>
+<td>"Felidae,Canidae"</td>
+<td></td>
+</tr>
+<tr>
+<td><code>--genus</code></td>
+<td>Genus to analyze <sup>1</sup></td>
+<td><code>string</code></td>
+<td>"Felis,Canis,Lynx"</td>
+<td></td>
+</tr>
+<tr>
+<td><code>--specieskeys</code></td>
+<td>Custom list of GBIF specieskeys (text file with a single column) <sup>3</sup></td>
+<td><code>file</code></td>
+<td>"SpeciesKeys.txt"</td>
+<td></td>
+</tr>
+<tr>
+<td><code>--noextinct</code></td>
+<td>File with extinct species specieskeys for their removal (file with a single column, with header)</td>
+<td><code>file</code></td>
+<td>"Carnivora"</td>
+<td></td>
+</tr>
+<tr>
+<td><code>--excludehuman</code></td>
+<td>Exclude genus "Homo" from occurrence data</td>
+<td><code>boolean</code></td>
+<td>True</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+<p><sup>1</sup>: 
+    Multiple comma-separated values allowed (e.g., "Felidae,Canidae" for the Family rank).  </p>
+<p><sup>2</sup>:
+    Unfortunately, <code>class</code> is a reserved keyword in Nextflow. 
+    Therefore, Latin <code>classis</code> is used as a parameter name.</p>
+<p><sup>3</sup>:
+    The <code>--specieskeys</code> argument enables users to specify a custom list of GBIF species keys.<br />
+    This should be provided as a text file containing a single column of species keys, 
+    each corresponding to a specific species as defined in the GBIF taxonomic backbone 
+    (https://www.gbif.org/species/search). 
+    These species keys can belong to various taxa, including non-monophyletic clades, 
+    and are used to filter and retrieve specific species data from GBIF.
+    Example of the file:<br />
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>specieskey
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>5219243
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>7964291
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>2435035
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>2434552
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>5219173
+</code></pre></div>
+    , where e.g. the first species key in the list (5219243) 
+    corresponds to <em>Vulpes vulpes</em> (https://www.gbif.org/species/5219243)</p>
+<h2 id="spatial-scope">Spatial scope<a class="headerlink" href="#spatial-scope" title="Permanent link">&para;</a></h2>
+<p>Spatial filters.</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Type</th>
+<th>Example</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--latmin</code></td>
+<td>Minimum latitude of species occurrences <sup>1</sup></td>
+<td><code>number</code></td>
+<td>5.1</td>
+<td></td>
+</tr>
+<tr>
+<td><code>--latmax</code></td>
+<td>Maximum latitude of species occurrences <sup>1</sup></td>
+<td><code>number</code></td>
+<td>15.5</td>
+<td></td>
+</tr>
+<tr>
+<td><code>--lonmin</code></td>
+<td>Minimum longitude of species occurrences <sup>1</sup></td>
+<td><code>number</code></td>
+<td>47.0</td>
+<td></td>
+</tr>
+<tr>
+<td><code>--lonmax</code></td>
+<td>Maximum longitude of species occurrences <sup>1</sup></td>
+<td><code>number</code></td>
+<td>55.5</td>
+<td></td>
+</tr>
+<tr>
+<td><code>--country</code></td>
+<td>Country code, ISO 3166 format <sup>2</sup></td>
+<td><code>string</code></td>
+<td>"DE,PL,CZ"</td>
+<td></td>
+</tr>
+<tr>
+<td><code>--polygon</code></td>
+<td>Custom area of interest (a file with polygons in GeoPackage format)</td>
+<td><code>file</code></td>
+<td><code>Brazil_ThreeStates.gpkg</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>--wgsrpd</code></td>
+<td>Polygons of World Geographical Regions <sup>3</sup></td>
+<td><code>file</code></td>
+<td><code>pipeline_data/WGSRPD.RData</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>--regions</code></td>
+<td>Names of World Geographical Regions <sup>4</sup></td>
+<td><code>string</code></td>
+<td>"L1_EUROPE,L1_ASIA_TEMPERATE"</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><sup>1</sup>: Coordinates should be provided in decimal degrees</p>
+<p><sup>2</sup>:
+    Country codes should be provided in the two-letter <code>ISO 3166-1 alpha-2</code> coding system,<br />
+    see details <a href="https://www.iso.org/obp/ui/#search">here</a> (column <code>Alpha-2</code> code),<br />
+    and <a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">this Wikipedia article</a>.</p>
+<p><sup>3</sup>:
+    PhyloNext ships <a href="https://www.tdwg.org/standards/wgsrpd/">WGSRPD</a> shapefile as a built-in data.
+    To use it, specify a full path to the data (e.g., <code>$(realpath "${HOME}/.nextflow/assets/vmikk/PhyloNext/pipeline_data/WGSRPD.RData")</code>)</p>
+<p><sup>4</sup>:
+    Multiple comma-separated values allowed.  </p>
+<p>Currently, Level-1 and Level-2 WGSRPD polygons are supported.  </p>
+<p><strong>Level-1</strong> polygons (continental level):
+<img alt="WGRSP-L1" loading="lazy" src="/assets/WGSRPD_L1.webp" />  </p>
+<p><strong>Level-2</strong> polygons (regional or subcontinental level):
+<img alt="WGRSP-L2" loading="lazy" src="/assets/WGSRPD_L2.webp" />  </p>
+<table>
+<thead>
+<tr>
+<th>Number</th>
+<th>Polygon code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><code>L1_EUROPE</code></td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>L1_AFRICA</code></td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>L1_ASIA_TEMPERATE</code></td>
+</tr>
+<tr>
+<td>4</td>
+<td><code>L1_ASIA_TROPICAL</code></td>
+</tr>
+<tr>
+<td>5</td>
+<td><code>L1_AUSTRALASIA</code></td>
+</tr>
+<tr>
+<td>6</td>
+<td><code>L1_PACIFIC</code></td>
+</tr>
+<tr>
+<td>7</td>
+<td><code>L1_NORTHERN_AMERICA</code></td>
+</tr>
+<tr>
+<td>8</td>
+<td><code>L1_SOUTHERN_AMERICA</code></td>
+</tr>
+<tr>
+<td>9</td>
+<td><code>L1_ANTARCTIC</code></td>
+</tr>
+<tr>
+<td>------</td>
+<td>---------------------------------</td>
+</tr>
+<tr>
+<td>10</td>
+<td><code>L2_Northern_Europe</code></td>
+</tr>
+<tr>
+<td>11</td>
+<td><code>L2_Middle_Europe</code></td>
+</tr>
+<tr>
+<td>12</td>
+<td><code>L2_Southwestern_Europe</code></td>
+</tr>
+<tr>
+<td>13</td>
+<td><code>L2_Southeastern_Europe</code></td>
+</tr>
+<tr>
+<td>14</td>
+<td><code>L2_Eastern_Europe</code></td>
+</tr>
+<tr>
+<td>20</td>
+<td><code>L2_Northern_Africa</code></td>
+</tr>
+<tr>
+<td>21</td>
+<td><code>L2_Macaronesia</code></td>
+</tr>
+<tr>
+<td>22</td>
+<td><code>L2_West_Tropical_Africa</code></td>
+</tr>
+<tr>
+<td>23</td>
+<td><code>L2_West_Central_Tropical_Africa</code></td>
+</tr>
+<tr>
+<td>24</td>
+<td><code>L2_Northeast_Tropical_Africa</code></td>
+</tr>
+<tr>
+<td>25</td>
+<td><code>L2_East_Tropical_Africa</code></td>
+</tr>
+<tr>
+<td>26</td>
+<td><code>L2_South_Tropical_Africa</code></td>
+</tr>
+<tr>
+<td>27</td>
+<td><code>L2_Southern_Africa</code></td>
+</tr>
+<tr>
+<td>28</td>
+<td><code>L2_Middle_Atlantic_Ocean</code></td>
+</tr>
+<tr>
+<td>29</td>
+<td><code>L2_Western_Indian_Ocean</code></td>
+</tr>
+<tr>
+<td>30</td>
+<td><code>L2_Siberia</code></td>
+</tr>
+<tr>
+<td>31</td>
+<td><code>L2_Russian_Far_East</code></td>
+</tr>
+<tr>
+<td>32</td>
+<td><code>L2_Middle_Asia</code></td>
+</tr>
+<tr>
+<td>33</td>
+<td><code>L2_Caucasus</code></td>
+</tr>
+<tr>
+<td>34</td>
+<td><code>L2_Western_Asia</code></td>
+</tr>
+<tr>
+<td>35</td>
+<td><code>L2_Arabian_Peninsula</code></td>
+</tr>
+<tr>
+<td>36</td>
+<td><code>L2_China</code></td>
+</tr>
+<tr>
+<td>37</td>
+<td><code>L2_Mongolia</code></td>
+</tr>
+<tr>
+<td>38</td>
+<td><code>L2_Eastern_Asia</code></td>
+</tr>
+<tr>
+<td>40</td>
+<td><code>L2_Indian_Subcontinent</code></td>
+</tr>
+<tr>
+<td>41</td>
+<td><code>L2_Indo_China</code></td>
+</tr>
+<tr>
+<td>42</td>
+<td><code>L2_Malesia</code></td>
+</tr>
+<tr>
+<td>43</td>
+<td><code>L2_Papuasia</code></td>
+</tr>
+<tr>
+<td>50</td>
+<td><code>L2_Australia</code></td>
+</tr>
+<tr>
+<td>51</td>
+<td><code>L2_New_Zealand</code></td>
+</tr>
+<tr>
+<td>60</td>
+<td><code>L2_Southwestern_Pacific</code></td>
+</tr>
+<tr>
+<td>61</td>
+<td><code>L2_South_Central_Pacific</code></td>
+</tr>
+<tr>
+<td>62</td>
+<td><code>L2_Northwestern_Pacific</code></td>
+</tr>
+<tr>
+<td>63</td>
+<td><code>L2_North_Central_Pacific</code></td>
+</tr>
+<tr>
+<td>70</td>
+<td><code>L2_Subarctic_America</code></td>
+</tr>
+<tr>
+<td>71</td>
+<td><code>L2_Western_Canada</code></td>
+</tr>
+<tr>
+<td>72</td>
+<td><code>L2_Eastern_Canada</code></td>
+</tr>
+<tr>
+<td>73</td>
+<td><code>L2_Northwestern_USA</code></td>
+</tr>
+<tr>
+<td>74</td>
+<td><code>L2_North_Central_USA</code></td>
+</tr>
+<tr>
+<td>75</td>
+<td><code>L2_Northeastern_USA</code></td>
+</tr>
+<tr>
+<td>76</td>
+<td><code>L2_Southwestern_USA</code></td>
+</tr>
+<tr>
+<td>77</td>
+<td><code>L2_South_Central_USA</code></td>
+</tr>
+<tr>
+<td>78</td>
+<td><code>L2_Southeastern_USA</code></td>
+</tr>
+<tr>
+<td>79</td>
+<td><code>L2_Mexico</code></td>
+</tr>
+<tr>
+<td>80</td>
+<td><code>L2_Central_America</code></td>
+</tr>
+<tr>
+<td>81</td>
+<td><code>L2_Caribbean</code></td>
+</tr>
+<tr>
+<td>82</td>
+<td><code>L2_Northern_South_America</code></td>
+</tr>
+<tr>
+<td>83</td>
+<td><code>L2_Western_South_America</code></td>
+</tr>
+<tr>
+<td>84</td>
+<td><code>L2_Brazil</code></td>
+</tr>
+<tr>
+<td>85</td>
+<td><code>L2_Southern_South_America</code></td>
+</tr>
+<tr>
+<td>90</td>
+<td><code>L2_Subantarctic_Islands</code></td>
+</tr>
+<tr>
+<td>91</td>
+<td><code>L2_Antarctic_Continent</code></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition info">
+<p class="admonition-title">Custom polygons</p>
+<p>It is possible to use custom polygons instead of WGSRPD file. 
+Polygons should be in the simple feature collection format (class <code>sf</code> of the <a href="https://r-spatial.github.io/sf/"><code>sf</code> package</a>, 
+geometry type: <code>MULTIPOLYGON</code>) and must contain <code>LevelName</code> column.
+Data should be saved as a serialized R object (with <code>saveRDS</code>).</p>
+</div>
+<h2 id="spatial-outliers-removal">Spatial outliers removal<a class="headerlink" href="#spatial-outliers-removal" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Type</th>
+<th>Example</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--dbscan</code></td>
+<td>Remove spatial outliers with density-based clustering</td>
+<td><code>boolean</code></td>
+<td>True</td>
+<td>False</td>
+</tr>
+<tr>
+<td><code>--dbscannoccurrences</code></td>
+<td>Minimum species occurrence to perform DBSCAN</td>
+<td><code>integer</code></td>
+<td>30</td>
+<td>30</td>
+</tr>
+<tr>
+<td><code>--dbscanepsilon</code></td>
+<td>DBSCAN parameter epsilon, km</td>
+<td><code>integer</code></td>
+<td>1500</td>
+<td>1500</td>
+</tr>
+<tr>
+<td><code>--dbscanminpts</code></td>
+<td>DBSCAN min number of points</td>
+<td><code>integer</code></td>
+<td>3</td>
+<td>3</td>
+</tr>
+</tbody>
+</table>
+<p>Currently, only density-based clustering (DBSCAN) algorithm is implemented for removal of spatial outliers.<br />
+The DBSCAN algorithm requires 2 parameters:<br />
+- <code>eps</code> (<code>--dbscanepsilon</code>), which specifies how close points should be to each other to be considered a part of a cluster<br />
+  If the distance between two points is lower or equal to this value, these points are considered neighbors.<br />
+- <code>minPoints</code> (<code>--dbscanminpts</code>), the minimum number of points to form a dense region.  </p>
+<p>Parameter <code>--dbscannoccurrences</code> is used to skip DBSCAN filtering for species with low number of unique points (e.g., &lt;30).  </p>
+<p>For more details, see the blog post <a href="https://data-blog.gbif.org/post/outlier-detection-using-dbscan/">"Outlier Detection Using DBSCAN"</a> by John Waller.</p>
+<h2 id="occurrence-filtering-and-binning">Occurrence filtering and binning<a class="headerlink" href="#occurrence-filtering-and-binning" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Type</th>
+<th>Example</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--minyear</code></td>
+<td>Minimum year of record's occurrences</td>
+<td><code>integer</code></td>
+<td>2000</td>
+<td>1945</td>
+</tr>
+<tr>
+<td><code>--maxyear</code></td>
+<td>Maximum year of record's occurrences</td>
+<td><code>integer</code></td>
+<td>2010</td>
+<td></td>
+</tr>
+<tr>
+<td><code>--coordprecision</code></td>
+<td>Coordinate precision threshold, decimal degrees <sup>1</sup></td>
+<td><code>number</code></td>
+<td>0.1</td>
+<td>0.1</td>
+</tr>
+<tr>
+<td><code>--coorduncertainty</code></td>
+<td>Maximum allowed coordinate uncertainty, meters <sup>1</sup></td>
+<td><code>number</code></td>
+<td>10000</td>
+<td>10000</td>
+</tr>
+<tr>
+<td><code>--coorduncertaintyexclude</code></td>
+<td>Black list of coordinate uncertainty values <sup>1</sup></td>
+<td><code>string</code></td>
+<td>"9999"</td>
+<td>"301,3036,999,9999"</td>
+</tr>
+<tr>
+<td><code>--basisofrecordinclude</code></td>
+<td>Round spatial coordinates to N decimal places <sup>2</sup></td>
+<td><code>string</code></td>
+<td>"PRESERVED_SPECIMEN"</td>
+<td></td>
+</tr>
+<tr>
+<td><code>--basisofrecordexclude</code></td>
+<td>Round spatial coordinates to N decimal places <sup>2</sup></td>
+<td><code>string</code></td>
+<td>"FOSSIL_SPECIMEN"</td>
+<td>"FOSSIL_SPECIMEN,LIVING_SPECIMEN"</td>
+</tr>
+<tr>
+<td><code>--h3resolution</code></td>
+<td>Spatial resolution of the H3 geospatial indexing system</td>
+<td><code>integer</code></td>
+<td>4</td>
+<td>4</td>
+</tr>
+<tr>
+<td><code>--roundcoords</code></td>
+<td>Round spatial coordinates to N decimal places <sup>3</sup></td>
+<td><code>integer</code></td>
+<td>2</td>
+<td>2</td>
+</tr>
+</tbody>
+</table>
+<p>For spatial binning of species occurrences, PhyloNext uses H3 geospatial indexing system <a href="https://h3geo.org/docs">developed by Uber</a>. 
+H3 represents a hierarchical geospatial index, where each hexagonal grid cell has a unique index (e.g., <code>8a1f05835a37fff</code> for GBIF headquarter). 
+H3 supports 16 resolutions (from 1 to 16), which can be selected in PhyloNext using <code>--h3resolution</code> parameter. 
+By default, PhyloNext uses resolution <code>4</code>, which corresponds to a hexagon with edge length of 22.6 km and cell area of 1170 km<sup>2</sup>. 
+More details on H3 resolutions could be found <a href="https://h3geo.org/docs/core-library/restable/">here</a>.  </p>
+<p><sup>1</sup>:
+    It's possible to remove occurrence records with a high level of coordinate uncertainty or low precision. 
+    It can be done using some threshold values. 
+    Also, there are several known default values for coordinate uncertainty in meters, which could be black-listed as well 
+    (e.g., these values may correspond to records linked to country centroids).<br />
+    NB! Records with missing values will not be removed, as many publishers do not fill these fields in the database.<br />
+    For details, see the blog post. <a href="https://data-blog.gbif.org/post/gbif-filtering-guide/">"Common things to look out for when post-processing GBIF downloads"</a> by John Waller.</p>
+<p><sup>2</sup>:
+    For details, see description of a Darwin Core term <a href="https://docs.gbif.org/course-data-use/en/basis-of-record.html">Basis of record</a> 
+    and a short explanation <a href="https://data-blog.gbif.org/post/living-specimen-to-preserved-specimen-understanding-basis-of-record/">here</a>.<br />
+    Multiple comma-separated values allowed.  </p>
+<p><sup>3</sup>: 
+    As DBSCAN filtering is very computationally intensive, 
+    it is possible to reduce dataset size (almost without loosing precision) by rounding record coordinates. 
+    By default, coordinates are rounded to 2 decimal places, 
+    which corresponds to an accuracy of ~1.11 km at the equator. 
+    To disable coordinate rounding, set <code>--roundcoords</code> to a negative values (e.g., <code>-1</code>).</p>
+<h2 id="removal-of-common-spatial-errors">Removal of common spatial errors<a class="headerlink" href="#removal-of-common-spatial-errors" title="Permanent link">&para;</a></h2>
+<p>PhyloNext implements several filters analogous to the filters 
+in <a href="https://ropensci.github.io/CoordinateCleaner/"><code>CoordinateCleaner</code></a> R package by Alexander Zizka:</p>
+<ul>
+<li>Country and province centroids</li>
+<li>Capital coordinates</li>
+<li>Coordinates of biodiversity institutions</li>
+<li>Urban areas</li>
+<li>Seas</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Type</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--terrestrial</code></td>
+<td>Land polygon for removal of non-terrestrial occurrences</td>
+<td><code>file</code></td>
+<td>enabled</td>
+</tr>
+<tr>
+<td><code>--rmcountrycentroids</code></td>
+<td>Polygons with country and province centroids</td>
+<td><code>file</code></td>
+<td>disabled</td>
+</tr>
+<tr>
+<td><code>--rmcountrycapitals</code></td>
+<td>Polygons with country capitals</td>
+<td><code>file</code></td>
+<td>disabled</td>
+</tr>
+<tr>
+<td><code>--rminstitutions</code></td>
+<td>Polygons with biological institutions and museums</td>
+<td><code>file</code></td>
+<td>disabled</td>
+</tr>
+<tr>
+<td><code>--rmurban</code></td>
+<td>Polygons with urban areas</td>
+<td><code>file</code></td>
+<td>disabled</td>
+</tr>
+</tbody>
+</table>
+<p>PhyloNext provides files for removal of common spatial errors, 
+ the data are built-in in the <code>pipeline_data</code> direcory and can be selected in the following way:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>--terrestrial<span class="w"> </span><span class="sb">`</span><span class="k">$(</span>realpath<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">HOME</span><span class="si">}</span><span class="s2">/.nextflow/assets/vmikk/PhyloNext/pipeline_data/Land_Buffered_025_dgr.RData&quot;</span><span class="k">)</span><span class="sb">`</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>--rmcountrycentroids<span class="w"> </span><span class="sb">`</span><span class="k">$(</span>realpath<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">HOME</span><span class="si">}</span><span class="s2">/.nextflow/assets/vmikk/PhyloNext/pipeline_data/CC_CountryCentroids_buf_1000m.RData&quot;</span><span class="k">)</span><span class="sb">`</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>--rmcountrycapitals<span class="w"> </span><span class="sb">`</span><span class="k">$(</span>realpath<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">HOME</span><span class="si">}</span><span class="s2">/.nextflow/assets/vmikk/PhyloNext/pipeline_data/CC_Capitals_buf_10000m.RData&quot;</span><span class="k">)</span><span class="sb">`</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>--rminstitutions<span class="w"> </span><span class="sb">`</span><span class="k">$(</span>realpath<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">HOME</span><span class="si">}</span><span class="s2">/.nextflow/assets/vmikk/PhyloNext/pipeline_data/CC_Institutions_buf_100m.RData&quot;</span><span class="k">)</span><span class="sb">`</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>--rmurban<span class="w"> </span><span class="sb">`</span><span class="k">$(</span>realpath<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">HOME</span><span class="si">}</span><span class="s2">/.nextflow/assets/vmikk/PhyloNext/pipeline_data/CC_Urban.RData&quot;</span><span class="k">)</span><span class="sb">`</span>
+</code></pre></div>
+Alternatively, users can provide own files with custom polygons.</p>
+<h2 id="diversity-estimation">Diversity estimation<a class="headerlink" href="#diversity-estimation" title="Permanent link">&para;</a></h2>
+<p>Diversity estimation is performed using <a href="https://shawnlaffan.github.io/biodiverse/">Biodiverse</a> program by Shawn Laffan. 
+Therefore, parameter values should correspond to the Biodiverse values.  </p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Type</th>
+<th>Example</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--indices</code></td>
+<td>Diversity and endemism indices to estimate <sup>1</sup></td>
+<td><code>string</code></td>
+<td>"calc_richness,calc_pd,calc_pe"</td>
+<td>"calc_richness,calc_simpson_shannon,calc_endemism_whole,calc_pd,calc_pe,calc_phylo_corrected_weighted_endemism,calc_phylo_rpd1,calc_phylo_rpd2,calc_phylo_rpe1,calc_phylo_rpe2"</td>
+</tr>
+<tr>
+<td><code>--iterations</code></td>
+<td>Number of randomisation iterations for standardized effect size estimation</td>
+<td><code>integer</code></td>
+<td>1000</td>
+<td>1000</td>
+</tr>
+<tr>
+<td><code>--biodiversethreads</code></td>
+<td>Number of Biodiverse threads</td>
+<td><code>integer</code></td>
+<td>10</td>
+<td>10</td>
+</tr>
+<tr>
+<td><code>--randname</code></td>
+<td>Randomisation scheme type <sup>2</sup></td>
+<td><code>string</code></td>
+<td>"rand_structured"</td>
+<td>"rand_structured"</td>
+</tr>
+<tr>
+<td><code>--randconstrain</code></td>
+<td>Polygons to perform spatially constrained randomization (GeoPackage format) <sup>2</sup></td>
+<td><code>file</code></td>
+<td><code>ZoogeographicRegions.gpkg</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><sup>1</sup>: 
+    Comma-separated list of metrics. More than 350 indices are supported.<br />
+    For details see <a href="https://github.com/shawnlaffan/biodiverse/wiki/Indices">Biodiverse manual</a>.<br />
+    The most common indices are listed here: <a href="../biodiverse/"><code>Diversity indices</code></a>.  </p>
+<p><sup>2</sup>:
+    In order to estimate standardized effect sizes (SES) of different diversity metrics and 
+    determine whether the obtained estimates are more extreme than what might be predicted given a null model, 
+    Biodiverse requires to perform randomization. 
+    By default, Biodiverse uses the <code>rand_structured</code> randomization algorithm, 
+    which shuffles species occurrences randomly across the entire area while preserving the 
+    species richness of each sample or grid cell. This method works well for most studies and is very effective. 
+    However, in cases where the analysis is conducted on a large scale and involves samples from different biomes or continents, 
+    the total pool of species may span multiple environments. As a result, randomizations may allocate 
+    a polar taxon to the tropics, or a desert taxon to a rainforest. One way to address this issue is 
+    by performing randomizations within a subset of data based on a spatial condition, such as biomes or zoogeographic regions. 
+    PhyloNext allows the user to specify such conditions as a GeoPackage file with multiple polygons. 
+    This feature enables users to keep any species within the biome in which they are found while still randomly relocating them. 
+    Hence, the randomization process can be tailored to suit the specific needs of the study 
+    and ensure that the results accurately reflect the distribution of species in the area of interest.</p>
+<div class="admonition info">
+<p class="admonition-title">Randomization algorithms in Biodiverse</p>
+<p>See a series of blog posts by Shawn Laffan:<br />
+1. <a href="https://biodiverse-analysis-software.blogspot.com/2015/06/better-control-of-randomisations.html">Better control of randomisations</a><br />
+2. <a href="https://biodiverse-analysis-software.blogspot.com/2020/11/randomisations-how-randstructured.html">How the <code>rand_structured</code> algorithm works</a><br />
+3. <a href="https://biodiverse-analysis-software.blogspot.com/2020/11/spatially-partition-your-randomisations.html">Spatially partition your randomisations</a>  </p>
+</div>
+<p>To illustrate how spatially-constrained randomizations can be executed for Mammals on a global scale, 
+one can utilize the zoogeographical regions established by <a href="https://www.scirp.org/journal/paperinformation.aspx?paperid=116248">Shen et al., 2022, DOI:10.4236/oje.2022.123014</a>.<br />
+These regions are conveniently available in the <code>pipeline_data/ZoogeographicRegions.gpkg</code> file, 
+which is included in PhyloNext.<br />
+The file comprises seven biogeographical kingdoms:<br />
+- West Palaearctic kingdom<br />
+- East Palaearctic kingdom<br />
+- Indo-Pacific kingdom<br />
+- Afrotropical kingdom<br />
+- Australian kingdom<br />
+- Nearctic kingdom<br />
+- Neotropical kingdom  </p>
+<p><img alt="ZooGeographical_Regions" loading="lazy" src="/assets/Shen_ZooGeographical_Regions_2022.webp" /><br />
+(original data source - <a href="https://www.scirp.org/journal/paperinformation.aspx?paperid=116248">https://www.scirp.org/journal/paperinformation.aspx?paperid=116248</a>)</p>
+<p>To activate spatially-constrained randomizations using these biogeographic regions, add the following argument to your command:<br />
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>--randconstrain<span class="w"> </span><span class="sb">`</span><span class="k">$(</span>realpath<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">HOME</span><span class="si">}</span><span class="s2">/.nextflow/assets/vmikk/PhyloNext/pipeline_data/ZoogeographicRegions.gpkg&quot;</span><span class="k">)</span><span class="sb">`</span>
+</code></pre></div></p>
+<h2 id="visualization-interactive">Visualization - interactive<a class="headerlink" href="#visualization-interactive" title="Permanent link">&para;</a></h2>
+<p>Interactive visualization depends on <a href="https://leafletjs.com/">Leaflet library</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Type</th>
+<th>Example</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--leaflet_var</code></td>
+<td>Diversity and endemism indices to estimate <sup>1</sup></td>
+<td><code>string</code></td>
+<td>"PD,SES_PD"</td>
+<td>"RICHNESS_ALL,PD,SES_PD,PD_P,ENDW_WE,SES_ENDW_WE,PE_WE,SES_PE_WE,PE_CWE,SES_PE_CWE,CANAPE,Redundancy"</td>
+</tr>
+<tr>
+<td><code>--leaflet_color</code></td>
+<td>Color scheme for continuous variables  <sup>2</sup></td>
+<td><code>string</code></td>
+<td>"RdYlBu"</td>
+<td>"RdYlBu"</td>
+</tr>
+<tr>
+<td><code>--leaflet_palette</code></td>
+<td>Color palette for continuous variables <sup>3</sup></td>
+<td><code>string</code></td>
+<td>"quantile"</td>
+<td>"quantile"</td>
+</tr>
+<tr>
+<td><code>--leaflet_bins</code></td>
+<td>Number of color bins for continuous variables</td>
+<td><code>integer</code></td>
+<td>5</td>
+<td>5</td>
+</tr>
+<tr>
+<td><code>--leaflet_sescolor</code></td>
+<td>Color scheme for standardized effect sizes, SES <sup>4</sup></td>
+<td><code>string</code></td>
+<td>"hotspots"</td>
+<td>"threat"</td>
+</tr>
+<tr>
+<td><code>--leaflet_redundancy</code></td>
+<td>Redundancy threshold for hiding the grid cells with low number of records <sup>5</sup></td>
+<td><code>number</code></td>
+<td>85</td>
+<td>0</td>
+</tr>
+<tr>
+<td><code>--leaflet_canapesuper</code></td>
+<td>Include the <code>super-endemism</code> class in CANAPE results <sup>6</sup></td>
+<td><code>boolean</code></td>
+<td>True</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<p><sup>1</sup>:
+    For a list of indices available in Biodiverse, see <a href="https://github.com/shawnlaffan/biodiverse/wiki/IndicesDevVersion">here</a>.<br />
+    Note: to show the index on a map, please include appropriate name of the Biodiverse subroutine with <code>--indices</code> parameter.<br />
+    To display Standardized-Effect-Size-based variables, add <code>SES_</code> prefix to the index name (e.g., <code>SES_PD</code>).<br />
+    For CANAPE (categorical analysis of neo- and paleoendemism; Mishler et al., 2014), add <code>CANAPE</code> to the variables list.<br />
+    To display redundancy index (measure of sampling completeness; see <a href="https://onlinelibrary.wiley.com/doi/full/10.1111/jse.12590">Mishler et al., 2020</a>), add <code>Redundancy</code> to the variables list.  </p>
+<p><sup>2</sup>: 
+    The name of a a color scheme from the <a href="https://colorbrewer2.org/#type=sequential&amp;scheme=BuGn&amp;n=3"><code>ColorBrewer</code></a> designed by Cynthia Brewer. 
+    For more options see <a href="https://r-graph-gallery.com/38-rcolorbrewers-palettes.html">here</a>.</p>
+<p><sup>3</sup>:
+   Defines mapping of data values to colors . See <a href="https://rstudio.github.io/leaflet/colors.html">Leaflet docs</a>:  </p>
+<ul>
+<li><code>colorNumeric</code> is a simple linear mapping from continuous numeric data to an interpolated palette</li>
+<li><code>colorBin</code> also maps continuous numeric data, but performs binning based on value (see the cut function)</li>
+<li><code>colorQuantile</code> similarly bins numeric data, but via the quantile function</li>
+</ul>
+<p><sup>4</sup>:
+    The default color scheme (<code>threat</code>-type) for SES values follows Mishler et al., 2014, 
+    where high SES values are in blue, and low SES values are in red.<br />
+    Alternatively, it is possible to use the <code>hotspot</code>-type palette, 
+    where areas with the red values indicate grid cells that contain significantly higher diversity or endemism than expected (hotspots), 
+    while the blue values indicate grid cells that contain significantly lower diversity/endemism than expected (coldspots).  </p>
+<p><sup>5</sup>:
+    Sampling redundancy is defined as [1 – (richness / number of specimens)] in a grid cell. 
+    By default, parameter <code>--leaflet_redundancy</code> is set to 0, which will display all grid cells.</p>
+<p><sup>6</sup>:
+    In contrast with the original publication by Mishler et al. (2020), 
+    the current version of Biodivere (v.4.1) classifies endemism into 3 categories 
+    (super-endemism type is merged with mixed endemism, 
+    see <a href="https://biodiverse-analysis-software.blogspot.com/2022/10/biodiverse-now-calculates-canape-for-you.html">https://biodiverse-analysis-software.blogspot.com/2022/10/biodiverse-now-calculates-canape-for-you.html</a>). 
+    In PhyloNext, it is possible to use both coloring schemes (with and without super-endemism).  </p>
+<div class="admonition info">
+<p class="admonition-title">CANAPE</p>
+<p>CANAPE (Categorical Analysis of Palaeo and Neo Endemism) 
+is able to distinguish different types of centres of endemism, and can thus give insights 
+into different evolutionary and ecological processes that may be responsible for these patterns. </p>
+<ul>
+<li>The centres of paleo-endemism indicate places where there are over-representation of long branches that are rare across the landscape.</li>
+<li>The centres of neo-endemism indicate an area where there is an over-representation of short branches that are rare on the landscape.</li>
+<li>Mixture of both paleo-endemism and neo-endemism</li>
+<li>Super-endemic sites</li>
+</ul>
+</div>
+<h2 id="visualization-static">Visualization - static<a class="headerlink" href="#visualization-static" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Type</th>
+<th>Example</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--plotvar</code></td>
+<td>Variables to plot <sup>1</sup></td>
+<td><code>string</code></td>
+<td>"PD"</td>
+<td>"RICHNESS_ALL,PD,PD_P"</td>
+</tr>
+<tr>
+<td><code>--plottype</code></td>
+<td>Plot type</td>
+<td><code>string</code></td>
+<td></td>
+<td>raw</td>
+</tr>
+<tr>
+<td><code>--plotformat</code></td>
+<td>Plot format (jpg,pdf,png)</td>
+<td><code>string</code></td>
+<td></td>
+<td>pdf</td>
+</tr>
+<tr>
+<td><code>--plotwidth</code></td>
+<td>Plot width (default, 18 inches)</td>
+<td><code>number</code></td>
+<td></td>
+<td>18</td>
+</tr>
+<tr>
+<td><code>--plotheight</code></td>
+<td>Plot height (default, 18 inches)</td>
+<td><code>number</code></td>
+<td></td>
+<td>18</td>
+</tr>
+<tr>
+<td><code>--plotunits</code></td>
+<td>Plot size units (in,cm)</td>
+<td><code>string</code></td>
+<td></td>
+<td>in</td>
+</tr>
+<tr>
+<td><code>--world</code></td>
+<td>World basemap <sup>2</sup></td>
+<td><code>file</code></td>
+<td></td>
+<td>enabled</td>
+</tr>
+</tbody>
+</table>
+<p><sup>1</sup>: Multiple comma-separated values allowed. For details see <code>--leaflet_var</code> parameter notes.</p>
+<p><sup>2</sup>:
+    World base map is based on <a href="https://www.naturalearthdata.com/">Natural Earth</a> data 
+    and is located in the <code>pipeline_data/WorldMap_NaturalEarth_Medium.RData</code> file.</p>
+<h2 id="phylogenetic-tree-related-parameters">Phylogenetic tree-related parameters<a class="headerlink" href="#phylogenetic-tree-related-parameters" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Type</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--phylabels</code></td>
+<td>Type of tip labels on a phylogenetic tree ("OTT" or "Latin") <sup>1</sup></td>
+<td><code>string</code></td>
+<td>Latin</td>
+</tr>
+<tr>
+<td><code>--taxgroup</code></td>
+<td>Specific taxonomy group in Open Tree of Life (default, "All_life") <sup>2</sup></td>
+<td><code>string</code></td>
+<td>All_life</td>
+</tr>
+<tr>
+<td><code>--maxage</code></td>
+<td>Manually assign root age for a tree obtained from Open Tree of Life <sup>3</sup></td>
+<td><code>number</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>--phyloonly</code></td>
+<td>Prune Open Tree tips for which there are no phylogenetic inputs <sup>4</sup></td>
+<td><code>boolean</code></td>
+<td>false</td>
+</tr>
+</tbody>
+</table>
+<p><sup>1</sup>: 
+    If a custom phylogenetic tree was provided by user (with <code>--phytree</code> parameter),
+    it's important to specify the type of tip labels. 
+    Currently, two labeling schemes are supported:</p>
+<ul>
+<li>Latin binomials in <code>Genus_species</code> format (e.g., "Homo_sapiens").<br />
+    NB! whitespaces in the name and sub-species ranks (variety, strain, form, etc.) are not allowed!</li>
+<li>Open Tree of Life IDs (e.g., <a href="https://tree.opentreeoflife.org/taxonomy/browse?id=770315">"ott770315"</a>)</li>
+</ul>
+<p><sup>2</sup>:
+    In the case if tree tips are in OTT-format, 
+    it is possible to limit the query scope at <a href="https://tree.opentreeoflife.org/curator/tnrs/">Taxonomic Name Resolution Service</a> of Open Tree of Life. 
+    List available taxonomic contexts in <a href="https://docs.ropensci.org/rotl/"><code>rotl</code></a> v.3.0.12 package:</p>
+<ul>
+<li>All life (default)</li>
+<li>Animals <ul>
+<li>Birds</li>
+<li>Tetrapods</li>
+<li>Mammals</li>
+<li>Amphibians</li>
+<li>Vertebrates</li>
+<li>Arthropods</li>
+<li>Molluscs</li>
+<li>Nematodes</li>
+<li>Platyhelminthes</li>
+<li>Annelids</li>
+<li>Cnidarians</li>
+<li>Arachnids</li>
+<li>Insects</li>
+</ul>
+</li>
+<li>Land plants <ul>
+<li>Hornworts</li>
+<li>Mosses</li>
+<li>Liverworts</li>
+<li>Vascular plants</li>
+<li>Club mosses</li>
+<li>Ferns</li>
+<li>Seed plants</li>
+<li>Flowering plants</li>
+<li>Monocots</li>
+<li>Eudicots</li>
+<li>Rosids</li>
+<li>Asterids</li>
+<li>Asterales</li>
+<li>Asteraceae</li>
+<li>Aster </li>
+<li>Symphyotrichum</li>
+<li>Campanulaceae</li>
+<li>Lobelia</li>
+</ul>
+</li>
+<li>Fungi <ul>
+<li>Basidiomycetes</li>
+<li>Ascomycetes</li>
+</ul>
+</li>
+<li>Bacteria</li>
+<li>Archaea</li>
+<li>SAR group<ul>
+<li>Excavata</li>
+<li>Amoebozoa</li>
+<li>Centrohelida</li>
+<li>Haptophyta</li>
+<li>Apusozoa</li>
+<li>Diatoms</li>
+<li>Ciliates</li>
+<li>Forams</li>
+</ul>
+</li>
+</ul>
+<div class="admonition info">
+<p class="admonition-title">Taxonomic context</p>
+<p>Whitespace is not allowed in taxonomic context! 
+Please replace space with underscore (e.g., "Seed plants" should be speciefied as <code>--taxgroup Seed_plants</code>).</p>
+</div>
+<p><sup>3</sup>:
+    In some cases, when there are no age estimates available for the phylogenetic tree nodes, 
+    automatic tree retrieval could fail. Therefore, it could be helpful to override the maximum node age to obtain the tree. 
+    Note, however, that in this case, units of some of the diversity indices (e.g., PD) become arbitrary.</p>
+<p><sup>4</sup>:
+    Open Tree utilizes taxonomic data to augment the structure and completeness of the synthetic tree 
+    when source phylogenies are absent or sparsely sampled (see <a href="https://www.pnas.org/doi/10.1073/pnas.1423041112">Hinchliff et al., 2015</a>). 
+    If required, branches lacking phylogenetic support could be removed from the tree using <code>--phyloonly</code> argument.</p>
+<div class="admonition info">
+<p class="admonition-title">Open Tree of Life</p>
+<p>More information about Open Tree of Life is available at <a href="https://opentreeoflife.github.io/">https://opentreeoflife.github.io/</a>.</p>
+</div>
+<h2 id="generic-options">Generic options<a class="headerlink" href="#generic-options" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Type</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--deriveddataset</code></td>
+<td>Export list of GBIF dataset keys for the filtered species occurrences <sup>1</sup></td>
+<td><code>boolean</code></td>
+<td>True</td>
+</tr>
+<tr>
+<td><code>--help</code></td>
+<td>Display help text (pipeline)</td>
+<td><code>boolean</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>--helpMsg</code></td>
+<td>Display help text (pipeline)</td>
+<td><code>boolean</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><sup>1</sup>: Could be used for citation and preparing a derived dataset with unique DOI.</p>
+<h2 id="nextflow-specific-parameters">Nextflow-specific parameters<a class="headerlink" href="#nextflow-specific-parameters" title="Permanent link">&para;</a></h2>
+<div class="admonition info">
+<p class="admonition-title">Parameter types</p>
+<p>PhyloNext-specific parameters are specified using double dash prefix (e.g., <code>--something value</code>). 
+Parameters related to the Nextflow workflow manager starts with a single dash prefix (e.g., <code>-work-dir wd</code>)</p>
+</div>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Type</th>
+<th>Example</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-qs</code></td>
+<td>Queue size (max number of processes that can be executed in parallel)</td>
+<td><code>integer</code></td>
+<td>8</td>
+<td>number of available CPUs</td>
+</tr>
+<tr>
+<td><code>-w</code></td>
+<td>Path to the working directory to store intermediate results</td>
+<td><code>string</code></td>
+<td>"$(pwd)/wd"</td>
+<td>"work"</td>
+</tr>
+<tr>
+<td><code>-resume</code></td>
+<td>Execute the pipeline using the cached results.<br>Useful to continue executions that was stopped by an error</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>-profile</code></td>
+<td>Configuration profiles (set of configuration attributes) <sup>1</sup></td>
+<td><code>string</code></td>
+<td>test,docker</td>
+<td></td>
+</tr>
+<tr>
+<td><code>-params-file</code></td>
+<td>Parameter file in YAML or JSON format <sup>1</sup></td>
+<td><code>file</code></td>
+<td><code>Mammals.yaml</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>-c</code></td>
+<td>Configuration file <sup>1</sup></td>
+<td><code>file</code></td>
+<td></td>
+<td><code>nextflow.config</code></td>
+</tr>
+</tbody>
+</table>
+<p><sup>1</sup>:
+    For examples, see the <code>Configuration and profiles</code> and <code>Parameter file</code> sections in the <a href="../usage/">Usage</a> documentation.</p>
+<div class="admonition example">
+<p class="admonition-title">Configuration profiles</p>
+<p>For more information on Nextflow profiles, see <a href="https://www.nextflow.io/docs/latest/config.html#config-profiles">https://www.nextflow.io/docs/latest/config.html#config-profiles</a>.</p>
+</div>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright © 2022 Vladimir Mikryukov, Kessy Abarenkov. All rights reserved.
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.ad660dcc.min.js"></script>
+      
+    
+  </body>
+</html>

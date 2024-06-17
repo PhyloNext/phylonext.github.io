@@ -1,0 +1,1493 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="An overview of PhyloNext parameters you might need to adjust to meet your needs.">
+      
+      
+        <meta name="author" content="Vladimir Mikryukov, Kessy Abarenkov">
+      
+      
+        <link rel="canonical" href="https://phylonext.github.io/usage/">
+      
+      
+        <link rel="prev" href="../installation/">
+      
+      
+        <link rel="next" href="../inputdata/">
+      
+      
+      <link rel="icon" href="../assets/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.27">
+    
+    
+      
+        <title>Usage instructions - PhyloNext</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.6543a935.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,700,700i%7CUbuntu+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Ubuntu";--md-code-font:"Ubuntu Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#input-data" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="PhyloNext" class="md-header__button md-logo" aria-label="PhyloNext" data-md-component="logo">
+      
+  <img src="../assets/PhyloNext_logo.webp" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            PhyloNext
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Usage instructions
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="brown" data-md-color-accent="red"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/vmikk/PhyloNext" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="PhyloNext" class="md-nav__button md-logo" aria-label="PhyloNext" data-md-component="logo">
+      
+  <img src="../assets/PhyloNext_logo.webp" alt="logo">
+
+    </a>
+    PhyloNext
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/vmikk/PhyloNext" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Installation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Usage instructions
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Usage instructions
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#input-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Input data
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#run-test-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Run test example
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-the-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      Running the pipeline
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#workflow-caching-and-checkpointing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Workflow caching and checkpointing
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#built-in-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Built-in data
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#workflow-processes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Workflow processes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-help" class="md-nav__link">
+    <span class="md-ellipsis">
+      Getting help
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration-and-profiles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuration and profiles
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuration and profiles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameter-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameter file
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuration-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuration file
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#profiles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Profiles
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-other-helpful-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      The other helpful commands
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#docker-and-singularity-containers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Docker and Singularity containers
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Docker and Singularity containers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#docker-image" class="md-nav__link">
+    <span class="md-ellipsis">
+      Docker image
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#singularity-image" class="md-nav__link">
+    <span class="md-ellipsis">
+      Singularity image
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#system-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      System requirements
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-on-hpc" class="md-nav__link">
+    <span class="md-ellipsis">
+      Running on HPC
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#whats-next" class="md-nav__link">
+    <span class="md-ellipsis">
+      What's next?
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../inputdata/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Input data
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../outputs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Output overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../parameters/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pipeline parameters
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../biodiverse/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Diversity indices
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../troubleshooting/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Troubleshooting
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../webgui/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Web GUI
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../post/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Post processing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../usecases/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Use cases
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../acknowledgements/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Acknowledgments
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../citations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Citations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#input-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Input data
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#run-test-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Run test example
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-the-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      Running the pipeline
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#workflow-caching-and-checkpointing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Workflow caching and checkpointing
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#built-in-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Built-in data
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#workflow-processes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Workflow processes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-help" class="md-nav__link">
+    <span class="md-ellipsis">
+      Getting help
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration-and-profiles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuration and profiles
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuration and profiles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameter-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameter file
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuration-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuration file
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#profiles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Profiles
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-other-helpful-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      The other helpful commands
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#docker-and-singularity-containers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Docker and Singularity containers
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Docker and Singularity containers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#docker-image" class="md-nav__link">
+    <span class="md-ellipsis">
+      Docker image
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#singularity-image" class="md-nav__link">
+    <span class="md-ellipsis">
+      Singularity image
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#system-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      System requirements
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-on-hpc" class="md-nav__link">
+    <span class="md-ellipsis">
+      Running on HPC
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#whats-next" class="md-nav__link">
+    <span class="md-ellipsis">
+      What's next?
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+  <h1>Usage instructions</h1>
+
+<h2 id="input-data">Input data<a class="headerlink" href="#input-data" title="Permanent link">&para;</a></h2>
+<div class="admonition info">
+<p class="admonition-title">Input data</p>
+<p>For mode details, see the <a href="../inputdata/">input data</a> description section in the documentation.</p>
+</div>
+<h2 id="run-test-example">Run test example<a class="headerlink" href="#run-test-example" title="Permanent link">&para;</a></h2>
+<p>Test run the pipeline using test data and Docker engine:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>nextflow<span class="w"> </span>run<span class="w"> </span>vmikk/PhyloNext<span class="w"> </span>-r<span class="w"> </span>main<span class="w"> </span>-profile<span class="w"> </span>test,docker
+</code></pre></div></p>
+<h2 id="running-the-pipeline">Running the pipeline<a class="headerlink" href="#running-the-pipeline" title="Permanent link">&para;</a></h2>
+<p>The typical command for running the pipeline is as follows:  </p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>nextflow<span class="w"> </span>run<span class="w"> </span>vmikk/PhyloNext<span class="w"> </span>-r<span class="w"> </span>main<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span>--input<span class="w"> </span><span class="s2">&quot;/mnt/GBIF/Parquet/2022-01-01/occurrence.parquet/&quot;</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span>--classis<span class="w"> </span><span class="s2">&quot;Mammalia&quot;</span><span class="w"> </span>--family<span class="w">  </span><span class="s2">&quot;Felidae,Canidae&quot;</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">  </span>--country<span class="w"> </span><span class="s2">&quot;DE,PL,CZ&quot;</span><span class="w">  </span><span class="se">\</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">  </span>--minyear<span class="w"> </span><span class="m">2000</span><span class="w">  </span><span class="se">\</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">  </span>--dbscan<span class="w"> </span><span class="nb">true</span><span class="w">  </span><span class="se">\</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">  </span>--iterations<span class="w"> </span><span class="m">100</span><span class="w">  </span><span class="se">\</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">  </span>--outdir<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$PWD</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">  </span>-resume<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">  </span>-profile<span class="w"> </span>docker
+</code></pre></div>
+This will launch the pipeline with the <code>docker</code> configuration profile (see below for more information about profiles).</p>
+<div class="admonition info">
+<p class="admonition-title">Parameters</p>
+<p>All parameters are listed in the <a href="../parameters/"><code>Parameters</code></a> section of the documentation.  </p>
+</div>
+<p>Note that the pipeline will create the following files in your working directory:  </p>
+<table>
+<thead>
+<tr>
+<th>Directory or file</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>00.filtered1.parquet</code></td>
+<td>Parquet subset of the data</td>
+</tr>
+<tr>
+<td><code>01.filtered2</code></td>
+<td>Data with spatial outliers removed, individually for each species in the dataset</td>
+</tr>
+<tr>
+<td><code>01.NumRecords</code></td>
+<td>Counts of the number of records per grid cell</td>
+</tr>
+<tr>
+<td><code>02.Biodiverse_input</code></td>
+<td>Table with species occurrences and phylogenetic tree, as well as input files for Biodiverse</td>
+</tr>
+<tr>
+<td><code>02.Biodiverse_results</code></td>
+<td>Biodiverse output</td>
+</tr>
+<tr>
+<td><code>03.Plots</code></td>
+<td>Data visualizations</td>
+</tr>
+<tr>
+<td><code>work</code></td>
+<td>Directory containing the Nextflow working files</td>
+</tr>
+<tr>
+<td><code>results</code></td>
+<td>Pipeline execution reports and dataset DOIs</td>
+</tr>
+<tr>
+<td><code>.nextflow_log</code></td>
+<td>Log file from Nextflow</td>
+</tr>
+</tbody>
+</table>
+<p>For more details about output files, see the <a href="../outputs/">Outputs</a> section of documentation.</p>
+<h2 id="workflow-caching-and-checkpointing">Workflow caching and checkpointing<a class="headerlink" href="#workflow-caching-and-checkpointing" title="Permanent link">&para;</a></h2>
+<p>All intermediate results of the pipeline run are stored in the <code>work</code> and <code>.nextflow</code> directories. 
+To restart a pipeline following an error from the most recent successfully executed process, use the '-resume' flag. 
+This way, Nextflow will use cached results from any pipeline steps where the inputs are the same, continuing from where it strop previously. 
+This option could also be helpful if you wish to change some of the parameters of downstream processes and will allow reusing results of upstream steps.  </p>
+<p>Without <code>-resume</code>, Nextflow will start the workflow from scratch and overwrite all previous results.  </p>
+<h2 id="built-in-data">Built-in data<a class="headerlink" href="#built-in-data" title="Permanent link">&para;</a></h2>
+<p>PhyloNext pipeline contains several files for removing spatial outliers or data subsetting.<br />
+By default, built-in data is stored in the folder <code>${HOME}/.nextflow/assets/vmikk/PhyloNext/pipeline_data/</code>.</p>
+<table>
+<thead>
+<tr>
+<th>File</th>
+<th>Description</th>
+<th>Citation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Land_Buffered_025_dgr.RData</code></td>
+<td>Land polygon for removal of non-terrestrial occurrences</td>
+<td><a href="https://www.naturalearthdata.com/">Natural Earth</a></td>
+</tr>
+<tr>
+<td><code>CC_CountryCentroids_buf_1000m.RData</code></td>
+<td>Polygons with country and province centroids</td>
+<td><a href="https://besjournals.onlinelibrary.wiley.com/doi/10.1111/2041-210X.13152">Zizka et al., 2019</a></td>
+</tr>
+<tr>
+<td><code>CC_Capitals_buf_10000m.RData</code></td>
+<td>Polygons with country capitals</td>
+<td><a href="https://besjournals.onlinelibrary.wiley.com/doi/10.1111/2041-210X.13152">Zizka et al., 2019</a></td>
+</tr>
+<tr>
+<td><code>CC_Institutions_buf_100m.RData</code></td>
+<td>Polygons with biological institutions and museums</td>
+<td><a href="https://besjournals.onlinelibrary.wiley.com/doi/10.1111/2041-210X.13152">Zizka et al., 2019</a></td>
+</tr>
+<tr>
+<td><code>CC_Urban.RData</code></td>
+<td>Polygons with urban areas</td>
+<td><a href="https://www.naturalearthdata.com/">Natural Earth</a></td>
+</tr>
+<tr>
+<td><code>WGSRPD.RData</code></td>
+<td>Polygons of World Geographical Regions</td>
+<td><a href="https://www.tdwg.org/standards/wgsrpd/">WGSRPD</a></td>
+</tr>
+<tr>
+<td><code>WorldMap_NaturalEarth_Medium.RData</code></td>
+<td>World map</td>
+<td><a href="https://www.naturalearthdata.com/">Natural Earth</a></td>
+</tr>
+</tbody>
+</table>
+<p>To use the built-in data, provide a full path to the data.<br />
+E.g., to remove records from urban areas, add the following parameter to your command:<br />
+<code>--rmurban ${HOME}/.nextflow/assets/vmikk/PhyloNext/pipeline_data/CC_Urban.RData</code>.<br />
+Alternatively, you may use custom files prepared in the same format.</p>
+<p>To remove common spatial errors from the data, PhyloNext uses databases 
+from the <a href="https://ropensci.github.io/CoordinateCleaner/"><code>CoordinateCleaner</code></a> R package by Alexander Zizka. 
+The following buffers were added to the datasets because coordinates in a database could be slightly inaccurate due to errors: </p>
+<ul>
+<li>Country and province centroids - 1 km buffer  </li>
+<li>Capital coordinates - 10 km buffer  </li>
+<li>Coordinates of biodiversity institutions - 100 m buffer  </li>
+</ul>
+<p>For the removal of non-terrestrial samples, PhyloNext uses a shapefile from <a href="https://www.naturalearthdata.com/">Natural Earth</a>,
+with a 0.25-degree buffer (corresponding to ~27 km distance, which is approximately half of the H3 grid cell at resolution 4).  </p>
+<p>Please cite any datasets if you have used them in your analysis.  </p>
+<h2 id="workflow-processes">Workflow processes<a class="headerlink" href="#workflow-processes" title="Permanent link">&para;</a></h2>
+<p>Workflow managers such as Nextflow are designed to help users run complex pipelines of processes, 
+potentially involving multiple steps and dependencies between them, efficiently and reproducibly. 
+One of the key features of such tools is the ability to run processes in parallel, 
+which can reduce the overall time taken to complete a workflow by distributing the workload across multiple computational resources. 
+To run the pipeline effectively and maximize resource utilization, Nextflow will:  </p>
+<ul>
+<li>Effectively and automatically allocate CPUs on the available computational resources (local, a cluster, or a cloud environment);</li>
+<li>Use a scheduling algorithm to determine the order in which processes should be run based on the dependencies between them and the availability of resources.</li>
+</ul>
+<p>During the pipeline execution, you will see a progress indicator in the output in your terminal:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>[ad/02689a] process &gt; occ_filter            [100%] 1 of 1 ✔
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>[b7/48eb93] process &gt; record_count          [100%] 1 of 1 ✔
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>[cc/af139c] process &gt; outl_low              [100%] 1 of 1 ✔
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>[88/197e96] process &gt; outl_high (5219243)   [100%] 6 of 6 ✔
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>[85/8425c9] process &gt; merge_occ             [100%] 1 of 1 ✔
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>[b6/bcf57e] process &gt; prep_biodiv           [100%] 1 of 1 ✔
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>[aa/bbb119] process &gt; phylodiv (1)          [100%] 1 of 1 ✔
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>[18/d367ac] process &gt; rand_filelist         [100%] 1 of 1 ✔
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>[6b/b1d08b] process &gt; aggregate_rnds_biodiv [100%] 1 of 1 ✔
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>[c6/ecf435] process &gt; div_to_csv            [100%] 1 of 1 ✔
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>[ae/7de318] process &gt; plot_pd               [100%] 1 of 1 ✔
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>[ba/141853] process &gt; plot_leaflet          [100%] 1 of 1 ✔
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>[6a/ca28a8] process &gt; derived_datasets      [100%] 1 of 1 ✔
+</code></pre></div>
+<p>Processes are run in parallel and start as soon as their input data becomes available. 
+Pipeline scripts are executed by Nextflow in a separate working directory. 
+Each working directory contains input files (symbolic links in case of running the pipeline locally), as well as results and log files.</p>
+<div class="admonition info">
+<p class="admonition-title">Log files</p>
+<p>In case of pipeline failure, it could be useful to inspect logs for a failed task.<br />
+E.g., working directory for the <code>occ_filter</code> is located in <code>./work/ad/02689a...</code>  and contains a log file <code>.command.log</code>.  </p>
+</div>
+<p>Processes description:  </p>
+<table>
+<thead>
+<tr>
+<th>Process name</th>
+<th>Description</th>
+<th>CPUs per task <sup>1</sup></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>occ_filter</code></td>
+<td>Occurrence filtering of parquet file</td>
+<td>4</td>
+</tr>
+<tr>
+<td><code>record_count</code></td>
+<td>Counting the total number of records per H3 cell</td>
+<td>4</td>
+</tr>
+<tr>
+<td><code>outl_high</code></td>
+<td>Per-species outlier removal for species with high occurrence (optionally, with DBSCAN), spatial binning</td>
+<td>1</td>
+</tr>
+<tr>
+<td><code>outl_low</code></td>
+<td>Spatial outlier removal for species with high occurrence (DBSCAN disabled), spatial binning</td>
+<td>4</td>
+</tr>
+<tr>
+<td><code>prep_ott_ids</code></td>
+<td>Preparation of Open Tree IDs for a phylogenetic tree (optional)</td>
+<td>4</td>
+</tr>
+<tr>
+<td><code>get_ott_tree</code></td>
+<td>Automatic fetching of a phylogenetic tree from Open Tree of Life (optional)</td>
+<td>1</td>
+</tr>
+<tr>
+<td><code>merge_occ</code></td>
+<td>Merging filtered species occurrences, species name matching, phylogenetic tree pruning</td>
+<td>4</td>
+</tr>
+<tr>
+<td><code>prep_biodiv</code></td>
+<td>Creation of Biodiverse input files and estimation of the observed diversity</td>
+<td>1</td>
+</tr>
+<tr>
+<td><code>phylodiv</code></td>
+<td>Randomization of species communities and estimation of standardized effect sizes of biodiversity metrics</td>
+<td>1</td>
+</tr>
+<tr>
+<td><code>rand_filelist</code></td>
+<td>Preparation of randomization results</td>
+<td>1</td>
+</tr>
+<tr>
+<td><code>aggregate_rnds_biodiv</code></td>
+<td>Randomization results pooling</td>
+<td>1</td>
+</tr>
+<tr>
+<td><code>div_to_csv</code></td>
+<td>Export of Biodiverse results into CSV format</td>
+<td>1</td>
+</tr>
+<tr>
+<td><code>plot_pd</code></td>
+<td>Plotting diversity indices (non-interactive maps in PDF format)</td>
+<td>1</td>
+</tr>
+<tr>
+<td><code>plot_leaflet</code></td>
+<td>Plotting diversity indices (interactive maps - Leaflet-based choropleth)</td>
+<td>1</td>
+</tr>
+<tr>
+<td><code>derived_datasets</code></td>
+<td>Preparation of a list of DOIs for the GBIF datasets involved in the analysis (optional)</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+<p><sup>1</sup>:
+    The default number of CPUs per task is configured in the <code>nextflow.config</code>.</p>
+<p>Processes are executed by Nextflow independently and are isolated from each other, 
+which allows running the pipeline on different nodes at HPC or a cloud platform.
+Most workflow processes support multi-threading (e.g., species occurrence filtering). 
+In some cases, the task will be divided into chunks and run in parallel 
+(e.g., estimation of standardized effect sizes - 10 processes with 100 randomization iterations each). 
+It is possible to customize the number of CPUs required by the process task (see <code>Configuration</code> below). 
+The total number of CPUs allowed to use by PhyloNext can be adjusted with <code>-qs</code> parameter (by default, all available CPUs will be used).</p>
+<h2 id="getting-help">Getting help<a class="headerlink" href="#getting-help" title="Permanent link">&para;</a></h2>
+<p>To show a help message, run:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>nextflow<span class="w"> </span>run<span class="w"> </span>vmikk/PhyloNext<span class="w"> </span>-r<span class="w"> </span>main<span class="w"> </span>--help
+</code></pre></div></p>
+<h2 id="configuration-and-profiles">Configuration and profiles<a class="headerlink" href="#configuration-and-profiles" title="Permanent link">&para;</a></h2>
+<p>Nextflow has a very flexible pipeline configuration system that supports multiple options 
+such as parameter files, configuration files, and profiles.  </p>
+<h3 id="parameter-file">Parameter file<a class="headerlink" href="#parameter-file" title="Permanent link">&para;</a></h3>
+<p>As the number of parameters can be quite large, it is possible to pass the pipeline parameters via YAML or JSON file, e.g.:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>nextflow<span class="w"> </span>run<span class="w"> </span>vmikk/PhyloNext<span class="w"> </span>-r<span class="w"> </span>main<span class="w"> </span>-resume<span class="w"> </span>-params-file<span class="w"> </span>Mammals.yaml
+</code></pre></div></p>
+<p>The YAML file could contain the following:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nt">input      </span><span class="p">:</span><span class="w"> </span><span class="s">&quot;/mnt/GBIF/Parquet/2022-01-01/occurrence.parquet/&quot;</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="nt">classis    </span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Mammalia&quot;</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="nt">family     </span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Felidae,Canidae&quot;</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="nt">country    </span><span class="p">:</span><span class="w"> </span><span class="s">&quot;DE,PL,CZ&quot;</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="nt">minyear    </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2000</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="nt">dbscan     </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="nt">phytree    </span><span class="p">:</span><span class="w"> </span><span class="s">&quot;/path/to/the/phylogenetic/tree.nwk&quot;</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="nt">iterations </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">100</span>
+</code></pre></div></p>
+<h3 id="configuration-file">Configuration file<a class="headerlink" href="#configuration-file" title="Permanent link">&para;</a></h3>
+<p>While the default requirements set within the pipeline will hopefully work for most people and with most input data, 
+you may want to customize the compute resources that the pipeline requests. 
+Each step in the pipeline has a default set of requirements for the number of CPUs 
+(and optionally, RAM and execution time - which could be important for executing PhyloNext on the HPC cluster).  </p>
+<p>To adjust the resource usage (e.g., the number of CPUs required by the <code>occ_filter</code> process), 
+you may create a custom configuration file (e.g., <code>my.config</code>) of the form:  </p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">process</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">    </span><span class="c1">// Occurrence filtering, stage I</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">    </span><span class="n">withName</span><span class="p">:</span><span class="n">occ_filter</span><span class="p">{</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">        </span><span class="n">cpus</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="p">}</span>
+</code></pre></div>
+<p>Then, use the <code>-c</code> option to choose the created configuration file while running the pipeline. E.g.,<br />
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>nextflow<span class="w"> </span>run<span class="w"> </span>vmikk/PhyloNext<span class="w"> </span>...<span class="w"> </span>-c<span class="w"> </span>my.config
+</code></pre></div></p>
+<div class="admonition info">
+<p class="admonition-title">Configs</p>
+<p>For more information, see the Nextflow documentation - <a href="https://www.nextflow.io/docs/latest/config.html#configuration-file">Configuration</a>.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Multiple configs</p>
+<p>When a pipeline is launched, Nextflow looks for configuration files (and profiles) in multiple locations. 
+The configs will be merged, and the settings in the config with higher priority will override the settings in the other configs. 
+If you want to ignore any default configuration files and use only the custom one, use the <code>-C your.config</code> option (please note that the <code>C</code> letter is capitalized). 
+For more details, see the <a href="https://www.nextflow.io/docs/latest/config.html#configuration">Configutation</a> section in the Nextflow docs.</p>
+</div>
+<h3 id="profiles">Profiles<a class="headerlink" href="#profiles" title="Permanent link">&para;</a></h3>
+<p>Nextflow profiles can be used as configuration presets for different compute environments.  </p>
+<p>We highly recommend using Docker or Singularity containers for full pipeline reproducibility. 
+For this, several generic profiles are bundled with the pipeline, instructing PhyloNext to use software that is packaged in the containers.<br />
+Available profiles include:</p>
+<table>
+<thead>
+<tr>
+<th>Profile name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>docker</code></td>
+<td>A generic configuration profile to be used with <a href="https://docker.com/">Docker</a></td>
+</tr>
+<tr>
+<td><code>singularity</code></td>
+<td>A generic configuration profile to be used with <a href="https://sylabs.io/docs/">Singularity</a></td>
+</tr>
+<tr>
+<td><code>test</code> <sup>1</sup></td>
+<td>A profile with a complete configuration for automated testing (built-in phylogenetic tree)</td>
+</tr>
+<tr>
+<td><code>test_ott</code> <sup>1</sup></td>
+<td>A profile with a complete configuration for automated testing (phylogenetic tree will be fetched from OToL)</td>
+</tr>
+</tbody>
+</table>
+<p><sup>1</sup>:
+    Test profiles include links to test data and do not require any other parameters to be specified.</p>
+<p>If <code>-profile</code> is not specified, the pipeline will run locally and expect all software to be installed and available on the <code>PATH</code>. 
+This is <em>not</em> recommended.  </p>
+<p>It is worth noting that multiple profiles can be loaded, for example: <code>-profile test,docker</code>. 
+Please keep in mind that the order of arguments is important! 
+Profiles are loaded in sequential order so that the later profile will overwrite earlier profiles.  </p>
+<div class="admonition info">
+<p class="admonition-title">Cluster and cloud executors</p>
+<p>To create a profile for running PhyloNext on HPC (e.g., using SLURM) or cloud (e.g., Azure Batch or AWS Batch), 
+please address Nextflow documentation - <a href="https://www.nextflow.io/docs/latest/executor.html">Executor section</a></p>
+</div>
+<h2 id="the-other-helpful-commands">The other helpful commands<a class="headerlink" href="#the-other-helpful-commands" title="Permanent link">&para;</a></h2>
+<p>To make sure that you're running the latest version of the pipeline, 
+you may download the latest version and update the pipeline using:<br />
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>nextflow<span class="w"> </span>pull<span class="w"> </span>vmikk/PhyloNext
+</code></pre></div>
+By default, the cached version of the pipeline is stored in the <code>~/.nextflow/assets/vmikk/PhyloNext</code> directory.</p>
+<p>Run the latest development version of the pipeline (from the <code>main</code> branch of the code repository):
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>nextflow<span class="w"> </span>run<span class="w"> </span>vmikk/PhyloNext<span class="w"> </span>-r<span class="w"> </span>main<span class="w"> </span>...
+</code></pre></div></p>
+<p>When executing PhyloNext on your data, it is a good idea to specify a version number for the pipeline. 
+This ensures that specific code revision and software dependencies are used. 
+Even if the codebase has changed, if you continue using the same tag, you will run the same pipeline version.<br />
+To find the latest version number, go to the <a href="https://github.com/vmikk/PhyloNext/releases">PhyloNext releases page</a>. 
+Then, when launching the pipeline, specify the version using <code>-r</code> flag (e.g., <code>-r v.1.0.0</code>).
+This version number will be recorded in pipeline reports so you can later go back and know what version you used.  </p>
+<p>Run the tagged version (e.g., v.1.3.0) of the pipeline:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>nextflow<span class="w"> </span>run<span class="w"> </span>vmikk/PhyloNext<span class="w"> </span>-r<span class="w"> </span>v.1.3.0<span class="w"> </span>...
+</code></pre></div></p>
+<p>Print the pipeline and system runtime information:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>nextflow<span class="w"> </span>info
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>nextflow<span class="w"> </span>info<span class="w"> </span>vmikk/PhyloNext
+</code></pre></div></p>
+<p>Delete the local copy of the pipeline:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>nextflow<span class="w"> </span>drop<span class="w"> </span>vmikk/PhyloNext
+</code></pre></div></p>
+<h2 id="docker-and-singularity-containers">Docker and Singularity containers<a class="headerlink" href="#docker-and-singularity-containers" title="Permanent link">&para;</a></h2>
+<p>Ready-to-use containers with all software dependencies required for PhyloNext 
+are hosted on <a href="https://hub.docker.com/r/vmikk/biodiverse">Docker Hub</a> and 
+<a href="https://cloud.sylabs.io/library/vmiks/gbif/biodiverse">Singularity Library</a>.  </p>
+<p>If you need to use a different version of a tool with the pipeline, 
+you may re-build the default containers and override the location of a container in a custom configuration file. 
+PhyloNext currently relies on three containers and refers to them using process labels.  </p>
+<table>
+<thead>
+<tr>
+<th>Process Label</th>
+<th>Default Docker container</th>
+<th>Docker file</th>
+<th>Default Singularity container</th>
+<th>Singularity definition file</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>container_r</code></td>
+<td><code>vmikk/rarrow:1.3.0</code></td>
+<td><a href="https://github.com/vmikk/PhyloNext/blob/main/containerfiles/R_arrow.dockerfile">Link</a></td>
+<td><code>library://vmiks/gbif/rarrow:1-3-0</code></td>
+<td><a href="https://github.com/vmikk/PhyloNext/blob/main/containerfiles/R_arrow_Singularity.def">Link</a></td>
+</tr>
+<tr>
+<td><code>container_biodiverse</code></td>
+<td><code>vmikk/biodiverse:1.3.0</code></td>
+<td><a href="https://github.com/vmikk/biodiverse-docker/blob/main/Dockerfile_NoPerlbrew">Link</a></td>
+<td><code>library://vmiks/gbif/biodiverse:1-3-0</code></td>
+<td><a href="https://github.com/vmikk/biodiverse-docker/blob/main/SingularityDef_NoPerlbrew.def">Link</a></td>
+</tr>
+<tr>
+<td><code>container_ott</code></td>
+<td><code>vmikk/opentree:0.0.2</code></td>
+<td><a href="https://github.com/vmikk/PhyloNext/blob/main/containerfiles/OpenTree.dockerfile">Link</a></td>
+<td><code>library://vmiks/gbif/opentree:0-0-2</code></td>
+<td><a href="https://github.com/vmikk/PhyloNext/blob/main/containerfiles/OpenTree_Singularity.def">Link</a></td>
+</tr>
+</tbody>
+</table>
+<p>The configuration file has the following format and must be adjusted if you would like to use custom containers:  </p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="n">process</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="w">    </span><span class="nl">withLabel</span><span class="p">:</span><span class="w"> </span><span class="err">&#39;</span><span class="n">container_r</span><span class="err">&#39;</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="w">        </span><span class="n">container</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">&#39;</span><span class="n">vmikk</span><span class="o">/</span><span class="n">rarrow</span><span class="p">:</span><span class="mf">1.3.0</span><span class="err">&#39;</span>
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>
+<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="w">    </span><span class="nl">withLabel</span><span class="p">:</span><span class="w"> </span><span class="err">&#39;</span><span class="n">container_biodiverse</span><span class="err">&#39;</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a><span class="w">        </span><span class="n">container</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">&#39;</span><span class="n">vmikk</span><span class="o">/</span><span class="n">biodiverse</span><span class="p">:</span><span class="mf">1.3.0</span><span class="err">&#39;</span>
+<a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a>
+<a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a><span class="w">    </span><span class="nl">withLabel</span><span class="p">:</span><span class="w"> </span><span class="err">&#39;</span><span class="n">container_ott</span><span class="err">&#39;</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a><span class="w">        </span><span class="n">container</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">&#39;</span><span class="n">vmikk</span><span class="o">/</span><span class="n">opentree</span><span class="p">:</span><span class="mf">0.0.2</span><span class="err">&#39;</span>
+<a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-13-14" name="__codelineno-13-14" href="#__codelineno-13-14"></a>
+<a id="__codelineno-13-15" name="__codelineno-13-15" href="#__codelineno-13-15"></a><span class="p">}</span>
+</code></pre></div>
+Containers can either be pulled from the web (e.g., use <code>youraccount/containername</code> to get it from Docker Hub), 
+or you may use local files (specify tag name for Docker, or a full path to the Singularity file).  </p>
+<h3 id="docker-image">Docker image<a class="headerlink" href="#docker-image" title="Permanent link">&para;</a></h3>
+<p>To build the <a href="https://www.docker.com/">Docker</a> image with Biodiverse (<code>container_biodiverse</code>), run:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/vmikk/biodiverse-docker
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="nb">cd</span><span class="w"> </span>biodiverse-docker
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>docker<span class="w"> </span>build<span class="w"> </span>--tag<span class="w"> </span>biodiverse<span class="w"> </span>--file<span class="w"> </span>Dockerfile_NoPerlbrew<span class="w"> </span>.<span class="w"> </span>
+</code></pre></div></p>
+<h3 id="singularity-image">Singularity image<a class="headerlink" href="#singularity-image" title="Permanent link">&para;</a></h3>
+<p>To build the <a href="https://sylabs.io/singularity/">Singularity</a> image with Biodiverse (<code>container_biodiverse</code>), run:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/vmikk/biodiverse-docker
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="nb">cd</span><span class="w"> </span>biodiverse-docker
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>sudo<span class="w"> </span>singularity<span class="w"> </span>build<span class="w"> </span>Biodiverse.sif<span class="w"> </span>SingularityDef_NoPerlbrew.def
+</code></pre></div></p>
+<h2 id="system-requirements">System requirements<a class="headerlink" href="#system-requirements" title="Permanent link">&para;</a></h2>
+<p>When running the pipeline, it's important to consider the system requirements and time elapsed to complete the analysis.  </p>
+<p>For example, for the global analysis of Mammal diversity at H3 resolution = 3 
+(4710 species and 9814 grid cells in total),
+and using 5000 spatially-uncontrained randomizations, with DBSCAN removal of outliers, 
+the total CPU hours required was 113.6 hours (using 50 CPUs, the wall time was 4 hours). 
+The peak memory usage during the analysis was 62GB for a DBSCAN filtering of occurrences of a very abundant species. 
+This analysis is computationally intensive and requires a powerful computer with at least 64GB of RAM.</p>
+<p>In contrast, the same analysis with a basis of record restricted to <code>PRESERVED_SPECIMEN</code> 
+(4333 species and 7182 grid cells) 
+required 30.4 CPU hours and a wall time of 1 hour and 13 minutes. 
+The maximum memory usage was 9GB for an interactive map generation.</p>
+<p>For a smaller-scale analysis, usually a less powerful computer with at least 16GB of RAM should be sufficient.</p>
+<h2 id="running-on-hpc">Running on HPC<a class="headerlink" href="#running-on-hpc" title="Permanent link">&para;</a></h2>
+<p>If you would like to run PhyloNext on HPC cluster, Nextflow can handle job submissions and supervise the running jobs. 
+In this case the Nextflow process must run until the pipeline is finished. 
+For this purpose you may either use <code>tmux</code> or <code>screen</code> to create a detached terminal session which you can log back into at a later time. 
+Or you may submit Nextflow process using your job scheduler (e.g., SLURM), from where Nextlow will start submitting the other jobs. 
+You can also use the <code>-bg</code> flag to launch Nextflow in the background to avoid blocking your current session.  </p>
+<p>Depending on the number of tasks, in some cases, the Nextflow Java virtual machines can require a large amount of memory. 
+To specify the RAM limits, you may create the following environmental variable before running Nextflow:  </p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="nv">NXF_OPTS</span><span class="o">=</span><span class="s1">&#39;-Xms1g -Xmx4g&#39;</span>
+</code></pre></div>
+<h2 id="whats-next">What's next?<a class="headerlink" href="#whats-next" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Explore interactive maps (see <a href="../outputs/">Output</a> file description)  </li>
+<li>Manually configure static map using the output in GeoPackage format (see <a href="../post/">Postprocessing</a>)  </li>
+<li>Explore the results using Biodiverse program (see <a href="../post/">Postprocessing</a>)  </li>
+<li>Prepare citable derived dataset with unique DOI (see <a href="../post/">Postprocessing</a>)  </li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright © 2022 Vladimir Mikryukov, Kessy Abarenkov. All rights reserved.
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.ad660dcc.min.js"></script>
+      
+    
+  </body>
+</html>

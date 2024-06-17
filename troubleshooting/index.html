@@ -1,0 +1,1062 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Common issues and solutions users might run into while using PhyloNext.">
+      
+      
+        <meta name="author" content="Vladimir Mikryukov, Kessy Abarenkov">
+      
+      
+        <link rel="canonical" href="https://phylonext.github.io/troubleshooting/">
+      
+      
+        <link rel="prev" href="../biodiverse/">
+      
+      
+        <link rel="next" href="../webgui/">
+      
+      
+      <link rel="icon" href="../assets/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.27">
+    
+    
+      
+        <title>Troubleshooting - PhyloNext</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.6543a935.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,700,700i%7CUbuntu+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Ubuntu";--md-code-font:"Ubuntu Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#troubleshooting" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="PhyloNext" class="md-header__button md-logo" aria-label="PhyloNext" data-md-component="logo">
+      
+  <img src="../assets/PhyloNext_logo.webp" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            PhyloNext
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Troubleshooting
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="brown" data-md-color-accent="red"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/vmikk/PhyloNext" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="PhyloNext" class="md-nav__button md-logo" aria-label="PhyloNext" data-md-component="logo">
+      
+  <img src="../assets/PhyloNext_logo.webp" alt="logo">
+
+    </a>
+    PhyloNext
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/vmikk/PhyloNext" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Installation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../usage/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Usage instructions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../inputdata/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Input data
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../outputs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Output overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../parameters/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pipeline parameters
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../biodiverse/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Diversity indices
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Troubleshooting
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Troubleshooting
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#pipeline-errors" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pipeline errors
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Pipeline errors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#resume-the-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Resume the workflow
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#specifying-the-full-path-for-input-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Specifying the full path for input data
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-number-of-available-cpus" class="md-nav__link">
+    <span class="md-ellipsis">
+      The number of available CPUs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pipeline-revision-version" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pipeline revision version
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lack-of-node-ages-in-the-phylogenetic-tree-for-target-taxon" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lack of node ages in the phylogenetic tree for target taxon
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation-problems" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installation problems
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Installation problems">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nextflow-not-found" class="md-nav__link">
+    <span class="md-ellipsis">
+      Nextflow not found
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#github-api-rate-limits" class="md-nav__link">
+    <span class="md-ellipsis">
+      GitHub API rate limits
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#docker-permissions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Docker permissions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#docker-and-wsl2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Docker and WSL2
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phylonext-containers" class="md-nav__link">
+    <span class="md-ellipsis">
+      PhyloNext containers
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../webgui/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Web GUI
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../post/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Post processing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../usecases/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Use cases
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../acknowledgements/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Acknowledgments
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../citations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Citations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#pipeline-errors" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pipeline errors
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Pipeline errors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#resume-the-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Resume the workflow
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#specifying-the-full-path-for-input-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Specifying the full path for input data
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-number-of-available-cpus" class="md-nav__link">
+    <span class="md-ellipsis">
+      The number of available CPUs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pipeline-revision-version" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pipeline revision version
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lack-of-node-ages-in-the-phylogenetic-tree-for-target-taxon" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lack of node ages in the phylogenetic tree for target taxon
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation-problems" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installation problems
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Installation problems">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nextflow-not-found" class="md-nav__link">
+    <span class="md-ellipsis">
+      Nextflow not found
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#github-api-rate-limits" class="md-nav__link">
+    <span class="md-ellipsis">
+      GitHub API rate limits
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#docker-permissions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Docker permissions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#docker-and-wsl2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Docker and WSL2
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phylonext-containers" class="md-nav__link">
+    <span class="md-ellipsis">
+      PhyloNext containers
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h1>
+<p>Common issues and solutions users might run into while using PhyloNext.</p>
+<div class="admonition bug">
+<p class="admonition-title">Don't see your error/bug? Post an issue on GitHub</p>
+<p>If you've encountered an error or bug not seen here, please post an issue at <a href="https://github.com/vmikk/PhyloNext/issues">PhyloNext GitHub Issues</a>. This will help greatly to track down the error and fix it!</p>
+</div>
+<h2 id="pipeline-errors">Pipeline errors<a class="headerlink" href="#pipeline-errors" title="Permanent link">&para;</a></h2>
+<h3 id="resume-the-workflow">Resume the workflow<a class="headerlink" href="#resume-the-workflow" title="Permanent link">&para;</a></h3>
+<div class="admonition failure">
+<p class="admonition-title">Pipeline was interrupted</p>
+<p>Any accidental failure - e.g., you closed the terminal, rebooted your computer, or the task was killed by a scheduler on HPC.</p>
+</div>
+<p>If the pipeline is interrupted, it can be resumed without having to start from scratch.<br />
+Add the <code>-resume</code> flag to your command, and Nextflow will start the workflow from the last successfully executed process, 
+retrieving all previous results from the cache.</p>
+<h3 id="specifying-the-full-path-for-input-data">Specifying the full path for input data<a class="headerlink" href="#specifying-the-full-path-for-input-data" title="Permanent link">&para;</a></h3>
+<p>When inputting data, ensuring the correct file path is essential for successful processing. 
+Incorrect or incomplete paths will lead to errors.  </p>
+<div class="admonition failure">
+<p class="admonition-title">File path</p>
+<p><code>Not a valid path value</code></p>
+</div>
+<p>To avoid this issue, it is recommended to use the absolute path to your input data. 
+An absolute path specifies the exact location of a file in the file system, starting from the root directory.  </p>
+<p>For instance, if your file is located in the current working directory, 
+you can construct its absolute path by prefixing the file name with <code>$(pwd)/</code>. 
+This command outputs the full path of the current directory, which, 
+when combined with your file or directory name, provides the complete path required.<br />
+Example: <code>$(pwd)/your_file_name</code>.  </p>
+<h3 id="the-number-of-available-cpus">The number of available CPUs<a class="headerlink" href="#the-number-of-available-cpus" title="Permanent link">&para;</a></h3>
+<div class="admonition failure">
+<p class="admonition-title">Number of CPUs required</p>
+<p><code>Process requirement exceeds available CPUs -- req: 10; avail: 8</code></p>
+</div>
+<p>Most likely, the number of CPUs configured for a process is larger than available on your system. 
+To fix it, modify a config file and reduce the number of CPUs for workflow processes to fit your hardware. E.g., change
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="w">    </span><span class="n">withName</span><span class="p">:</span><span class="n">occ_filter</span><span class="p">{</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">        </span><span class="n">cpus</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="p">}</span>
+</code></pre></div>
+to 
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="w">    </span><span class="n">withName</span><span class="p">:</span><span class="n">occ_filter</span><span class="p">{</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">        </span><span class="n">cpus</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">8</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="p">}</span>
+</code></pre></div></p>
+<p>See the <code>Configuration</code> section in the <a href="https://phylonext.github.io/usage/#configuration-file">usage documentation</a>.</p>
+<h3 id="pipeline-revision-version">Pipeline revision version<a class="headerlink" href="#pipeline-revision-version" title="Permanent link">&para;</a></h3>
+<div class="admonition failure">
+<p class="admonition-title">Pipeline revision version</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>Project \`vmikk/PhyloNext\` is currently stickied on revision: main -- you need to explicitly specify a revision with the option \`-r\` in order to use it
+</code></pre></div>
+</div>
+<p>Solution - specify a version number of the pipeline.<br />
+To run the latest version, add <code>-r main</code> to your command.<br />
+Alternatively, you may specify the exact version (or tag) you wish, e.g. <code>-r v.0.0.2</code>.  </p>
+<h3 id="lack-of-node-ages-in-the-phylogenetic-tree-for-target-taxon">Lack of node ages in the phylogenetic tree for target taxon<a class="headerlink" href="#lack-of-node-ages-in-the-phylogenetic-tree-for-target-taxon" title="Permanent link">&para;</a></h3>
+<p>Currently, OpenTree may not contain age estimates for all nodes within the synthetic tree, 
+which can impede the automatic retrieval of a phylogenetic tree for your taxon of interest.  </p>
+<p>To address this limitation, we outline several strategies below.  </p>
+<div class="admonition failure">
+<p class="admonition-title">Missing age estimate for subtree root</p>
+<p><code>ERROR: no age estimate for subtree root could be found in datastore. Please  re-run query with a max root age using argument 'max_age'.</code></p>
+</div>
+<p>When the database lacks age data for a clade, 
+you can manually set a maximum age for the clade using the <code>--maxage</code> parameter. 
+It's advisable to use a credible value, such as one derived from scholarly articles 
+(e.g., through a Google Scholar search for published age estimates).  </p>
+<div class="admonition failure">
+<p class="admonition-title">Inadequate data for date estimation</p>
+<p><code>ERROR: only 2 or fewer age calibrations found for this tree. We have insufficient data to estimate dates.</code></p>
+</div>
+<p>In situations with insufficient data for accurate date estimation, 
+acquiring a custom tree may be necessary. 
+To derive node age estimates, you can use <code>Chronosynth</code> 
+and apply <code>Bladj</code> to smooth out the node ages.
+For instructions, visit <a href="https://github.com/McTavishLab/GBIF-Biodiverse-OpenTree/tree/main/dates">McTavishLab's GitHub repository</a>.  </p>
+<h2 id="installation-problems">Installation problems<a class="headerlink" href="#installation-problems" title="Permanent link">&para;</a></h2>
+<h3 id="nextflow-not-found">Nextflow not found<a class="headerlink" href="#nextflow-not-found" title="Permanent link">&para;</a></h3>
+<div class="admonition failure">
+<p class="admonition-title">Command not found</p>
+<p><code>command not found: nextflow</code></p>
+</div>
+<p>If you installed Nextflow in the <code>~/bin</code> directory, most likely, it is not added to your PATH environment variable. 
+To fix it, run the following command:</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$HOME</span><span class="s2">/bin:</span><span class="nv">$PATH</span><span class="s2">&quot;</span>
+</code></pre></div>
+and try to execute Nextflow again.  </p>
+<p>If it works, you may add this command to the <code>~/.bashrc</code> file to make these changes permanent. 
+To do it from the command line, run:  </p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;export PATH=</span><span class="nv">$HOME</span><span class="s2">/bin:</span><span class="nv">$PATH</span><span class="s2">&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.bashrc
+</code></pre></div>
+<div class="admonition example">
+<p class="admonition-title">Notes on shells other than bash</p>
+<p>If you are using a shell other than <code>bash</code>, please modify configuration file specific for your shell.<br />
+E.g., for <code>zsh</code> it should be <code>~/.zshrc</code>.<br />
+To know which shell are you using, run <code>echo $SHELL</code></p>
+</div>
+<h3 id="github-api-rate-limits">GitHub API rate limits<a class="headerlink" href="#github-api-rate-limits" title="Permanent link">&para;</a></h3>
+<div class="admonition failure">
+<p class="admonition-title">GitHub API rate limits</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>Checking vmikk/PhyloNext ...  
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>WARN: Cannot read project manifest -- Cause: API rate limit exceeded -- Provide your GitHub user name and password to get a higher rate limit  
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>API rate limit exceeded -- Provide your GitHub user name and password to get a higher rate limit
+</code></pre></div>
+</div>
+<p>Without authentication, GitHub allows only a limited number of connections per hour (60 unauthenticated requests/hr). 
+Most likely, you've hit this problem because users from your organization (e.g., university) send too many requests to GitHub.  </p>
+<p>To overcome this limitation, you may generate a personal access token at <a href="https://github.com/settings/tokens">https://github.com/settings/tokens</a> (the minimum required scopes are <code>repo</code>, <code>read:org</code>, and <code>workflow</code>).<br />
+To authenticate, you may use the GitHub client <code>gh</code> (<a href="https://cli.github.com/">https://cli.github.com/</a>).<br />
+Run <code>gh auth login --with-token &lt;YOURTOKEN&gt;</code> to login. This way you will have a higher API rate limit.  </p>
+<p>Alternatively, you may wait for a while until the recovery of API limits. 
+Or, if you are using PhyloNext locally, you may change your IP address 
+(for example, connect your laptop to another wi-fi hotspot, e.g., to a smartphone hotspot) 
+and try to pull the pipeline once again. 
+You need to download the pipeline from GitHub only once. 
+Then, Nextflow will cache the pipeline code locally in the <code>~/.nextflow/assets/</code> directory 
+and will re-use it later without the need to connect to GitHub.  </p>
+<p>As another option, you may just manually clone the git repository into Nextlow assets directory:<br />
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>mkdir<span class="w"> </span>-p<span class="w"> </span>~/.nextflow/assets/vmikk/
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="nb">cd</span><span class="w"> </span>~/.nextflow/assets/vmikk/
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/vmikk/PhyloNext
+</code></pre></div></p>
+<div class="admonition example">
+<p class="admonition-title">Rate limit information</p>
+<p>To find the current rate limit information (for unauthenticated requests), run<br />
+<code>curl -I https://api.github.com/users/octocat</code></p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Token security</p>
+<p>It is important to keep your token secure and not share it with others.<br />
+Also make sure to revoke the token if it is compromised or no longer needed.</p>
+</div>
+<h3 id="docker-permissions">Docker permissions<a class="headerlink" href="#docker-permissions" title="Permanent link">&para;</a></h3>
+<div class="admonition failure">
+<p class="admonition-title">Docker - permission denied</p>
+<p><code>docker: Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Post "http://%2Fvar%2Frun%2Fdocker.sock/v1.24/containers/create?name=nxf-Cz6yqNjGI9AhRpsqkU4mSAHC": dial unix /var/run/docker.sock: connect: permission denied.</code></p>
+</div>
+<p>Most likely, you forgot to add your user to the <code>docker</code> group and you need a super-user privileges to execute the container.<br />
+To fix this error, run:  </p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1"># Create the docker group.</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>sudo<span class="w"> </span>groupadd<span class="w"> </span>docker
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="c1">#  Add your user to the docker group.</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>sudo<span class="w"> </span>usermod<span class="w"> </span>-aG<span class="w"> </span>docker<span class="w"> </span><span class="si">${</span><span class="nv">USER</span><span class="si">}</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="c1"># Log out and log back in so that your group membership is re-evaluated.</span>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="c1"># Alternatively, to skip logging out, type the following command:  su -s ${USER}</span>
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="c1"># Verify that you can run docker commands without sudo</span>
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>docker<span class="w"> </span>run<span class="w"> </span>hello-world
+</code></pre></div>
+<h3 id="docker-and-wsl2">Docker and WSL2<a class="headerlink" href="#docker-and-wsl2" title="Permanent link">&para;</a></h3>
+<div class="admonition failure">
+<p class="admonition-title">Docker and WSL2</p>
+<p><code>The command 'docker' could not be found in this WSL 2 distro. We recommend to activate the WSL integration in Docker Desktop settings.</code></p>
+</div>
+<p>Try to enable <code>Use the WSL2 based engine</code> in the <code>Docker Desktop</code> settings.  </p>
+<p><a class="zoom" href="/assets/DokerDesktop_WSL2.webp">
+<img alt="WSL2 Docker Engine" src="/assets/DokerDesktop_WSL2.webp" />
+</a></p>
+<h3 id="phylonext-containers">PhyloNext containers<a class="headerlink" href="#phylonext-containers" title="Permanent link">&para;</a></h3>
+<p>If for some reason Nextflow is not able to download containers for PhyloNext, 
+it's possible to pull them manually using:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>docker<span class="w"> </span>pull<span class="w"> </span>vmikk/rarrow:1.0.0
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>docker<span class="w"> </span>pull<span class="w"> </span>vmikk/biodiverse:1.0.0
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>docker<span class="w"> </span>pull<span class="w"> </span>vmikk/opentree:0.0.2
+</code></pre></div>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright © 2022 Vladimir Mikryukov, Kessy Abarenkov. All rights reserved.
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.ad660dcc.min.js"></script>
+      
+    
+  </body>
+</html>
