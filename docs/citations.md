@@ -6,7 +6,9 @@ description: >-
 
 # Citations
 
-If you use PhyloNext pipeline for your analysis, please cite it using the following DOI: [10.5281/zenodo.7974081](https://zenodo.org/record/7974081)
+If you use PhyloNext pipeline for your analysis, please cite it as:
+
+Mikryukov V, Abarenkov K, Laffan S, Robertson T, McTavish EJ, Jeppesen TS, Waller J, Blissett M, Kõljalg U, Miller JT (2024). PhyloNext: A pipeline for phylogenetic diversity analysis of GBIF-mediated data. BMC Ecology and Evolution, 24(1), 76. [DOI:10.1186/s12862-024-02256-9](https://bmcecolevol.biomedcentral.com/articles/10.1186/s12862-024-02256-9)
 
 **Biodiverse**:  
 Laffan SW, Lubarsky E, Rosauer DF (2010) Biodiverse, a tool for the spatial analysis of biological and related diversity. Ecography, 33: 643-647. [DOI: 10.1111/j.1600-0587.2010.06237.x](https://onlinelibrary.wiley.com/doi/10.1111/j.1600-0587.2010.06237.x)  
